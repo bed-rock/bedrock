@@ -1,0 +1,118 @@
+//
+// Variables
+// ==========================
+
+
+// Color
+$primary-color: #87CEEB !default;
+$secondary-color: #060 !default;
+
+$success-color: #5cb85c !default;
+$info-color: #5bc0de !default;
+$warning-color: #f0ad4e !default;
+$danger-color: #d9534f !default;
+
+$gray-color: #666 !default;
+$gray-dark-color: #333;
+$gray-light-color: #999 !default;
+
+
+// Scaffolding
+$body-bg: #fff !default;
+$text-color: $gray-dark !default;
+$link-color: $brand-primary !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+
+// Typography
+$font-sans-serif: "Open Sans", Arial, sans-serif !default;
+$font-size-base: 14px !default;
+$font-size-large: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small: ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1: floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+
+
+// Tables
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding: 8px !default;
+//** Padding for cells in `.table-condensed`.
+$table-condensed-cell-padding:  5px !default;
+
+//** Default background color used for all tables.
+$table-bg:                      transparent !default;
+//** Background color used for `.table-striped`.
+$table-bg-accent:               #f9f9f9 !default;
+//** Background color used for `.table-hover`.
+$table-bg-hover:                #f5f5f5 !default;
+$table-bg-active:               $table-bg-hover !default;
+
+//** Border color for table and cell borders.
+$table-border-color:            #ddd !default;
+
+
+// Buttons
+$btn-font-weight: 400 !default;
+
+$btn-default-color:              #333 !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ccc !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $primary-color !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-secondary-color:              #fff !default;
+$btn-secondary-bg:                 $success-color !default;
+$btn-secondary-border:             darken($btn-success-bg, 5%) !default;
+
+$btn-link-disabled-color:        $gray-color !default;
+
+
+
+// Form controls
+$input-bg: #fff !default;
+$input-bg-disabled: $gray-light-color !default;
+$input-color: $gray-color !default;
+$input-border: #e6e6e6 !default; // rgba(0,0,0,.1)
+$input-border-focus: #66afe9 !default;
+$input-color-placeholder: #999 !default;
+
+$input-height-base: 35px !default;
+$input-height-large: 45px !default;
+$input-height-small: 30px !default;
+$input-border-width: 1px !default;
+$input-border-radius: 4px !default;
+
+$form-group-margin-bottom:       15px !default;
+
+$cursor-disabled:                not-allowed !default;
+
+
+// Media queries breakpoints
+//
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
