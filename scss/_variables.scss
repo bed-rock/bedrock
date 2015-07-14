@@ -1,118 +1,153 @@
-//
+// ===============================
 // Variables
-// ==========================
+// ===============================
 
 
-// Color
-$primary-color: #87CEEB !default;
-$secondary-color: #060 !default;
+# Created by https://www.gitignore.io
 
-$success-color: #5cb85c !default;
-$info-color: #5bc0de !default;
-$warning-color: #f0ad4e !default;
-$danger-color: #d9534f !default;
+### Sass ###
+.sass-cache
+*.css.map
 
-$gray-color: #666 !default;
-$gray-dark-color: #333;
-$gray-light-color: #999 !default;
+
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+
+
+### grunt ###
+# Grunt usually compiles files inside this directory
+dist/
+
+# Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
+.tmp/
+
+
+### SublimeText ###
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# workspace files are user-specific
+*.sublime-workspace
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+# *.sublime-project
+
+# sftp configuration file
+sftp-config.json
+
 
 
 // Scaffolding
-$body-bg: #fff !default;
-$text-color: $gray-dark !default;
-$link-color: $brand-primary !default;
-$link-hover-color: darken($link-color, 15%) !default;
-$link-hover-decoration: underline !default;
+//
+$body-bg: #fff;
+$text-color: $color-gray-dark;
+$link-color: $color-primary;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
 
 
 // Typography
-$font-sans-serif: "Open Sans", Arial, sans-serif !default;
-$font-size-base: 14px !default;
-$font-size-large: ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small: ceil(($font-size-base * 0.85)) !default; // ~12px
+//
+$font-family: "Open Sans", Arial, sans-serif;
+$font-size: 1.4rem;
+$font-size-large: 1.8rem;
+$font-size-small: 1.2rem;
 
-$font-size-h1: floor(($font-size-base * 2.6)) !default; // ~36px
-$font-size-h2: floor(($font-size-base * 2.15)) !default; // ~30px
-$font-size-h3: ceil(($font-size-base * 1.7)) !default; // ~24px
-$font-size-h4: ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-h5: $font-size-base !default;
-$font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h1: 3.6rem;
+$font-size-h2: 3.0rem;
 
-$headings-font-weight: 500 !default;
-$headings-line-height: 1.1 !default;
+$line-height: $font-size / 10;
+$font-bold: 500;
+
+$font-weight-h1: 300;
+$font-weight-h2: 500;
+$headings-line-height: 1.1;
 
 
 // Tables
 //** Padding for `<th>`s and `<td>`s.
-$table-cell-padding: 8px !default;
+//
+$table-cell-padding: 8px;
 //** Padding for cells in `.table-condensed`.
-$table-condensed-cell-padding:  5px !default;
+$table-condensed-cell-padding: 5px;
 
 //** Default background color used for all tables.
-$table-bg:                      transparent !default;
+$table-bg: transparent;
 //** Background color used for `.table-striped`.
-$table-bg-accent:               #f9f9f9 !default;
+$table-bg-accent: $color-white-2;
 //** Background color used for `.table-hover`.
-$table-bg-hover:                #f5f5f5 !default;
-$table-bg-active:               $table-bg-hover !default;
+$table-bg-hover: $color-white-4;
+$table-bg-active: $table-bg-hover;
 
 //** Border color for table and cell borders.
-$table-border-color:            #ddd !default;
+$table-border-color: #ddd;
 
 
 // Buttons
-$btn-font-weight: 400 !default;
+//
+$button-font-weight: 400;
 
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
+$button-default-color: #333;
+$button-default-bg: $color-white-dark;
+$button-default-border: $border-color-light;
 
-$btn-primary-color:              #fff !default;
-$btn-primary-bg:                 $primary-color !default;
-$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+$button-primary-color: #fff;
+$button-primary-bg: $color-primary;
+$button-primary-border: darken($button-primary-bg, 4%);
 
-$btn-secondary-color:              #fff !default;
-$btn-secondary-bg:                 $success-color !default;
-$btn-secondary-border:             darken($btn-success-bg, 5%) !default;
+$button-secondary-color: #fff;
+$button-secondary-bg: $color-secondary;
+$button-secondary-border: darken($button-secondary-bg, 4%);
 
-$btn-link-disabled-color:        $gray-color !default;
+$button-link-disabled-color: $color-gray;
 
+$button-height: 36px;
+$button-padding: 8px;
+$button-margin: 4px;
+$button-border-radius: 2px;
 
 
 // Form controls
-$input-bg: #fff !default;
-$input-bg-disabled: $gray-light-color !default;
-$input-color: $gray-color !default;
-$input-border: #e6e6e6 !default; // rgba(0,0,0,.1)
-$input-border-focus: #66afe9 !default;
-$input-color-placeholder: #999 !default;
+//
+$input-bg: #fff;
+$input-bg-disabled: $color-gray-light;
+$input-font-size: $font-size;
+$input-text-indent: 0;
+$input-color: $text-color;
+$input-color-placeholder: $color-gray-light;
 
-$input-height-base: 35px !default;
-$input-height-large: 45px !default;
-$input-height-small: 30px !default;
-$input-border-width: 1px !default;
-$input-border-radius: 4px !default;
+$input-height: 36px;
+$input-height-large: 48px;
+$input-height-small: 30px;
+$input-border-width: 1px;
+$input-border-color: $color-white-dark;
+$input-hover-border-color: $color-primary;
+$input-border-focus: $color-primary;
+$input-border-radius: 0;
+$input-line-height: 1;
 
-$form-group-margin-bottom:       15px !default;
+$textarea-line-height: $line-height;
 
-$cursor-disabled:                not-allowed !default;
+$form-group-margin-bottom: 15px;
+
+$cursor-disabled: not-allowed;
+
+
+// Border radius
+//
+$border-radius-large: 50%;
 
 
 // Media queries breakpoints
 //
-// Extra small screen / phone
-//** Deprecated `$screen-xs` as of v3.0.1
-$screen-xs:                  480px !default;
-$screen-xs-min:              $screen-xs !default;
+$break-phone: 480px;
+$break-tablet: 768px;
+$break-desktop: 992px;
+$break-large-desktop: 1200px;
 
-// Small screen / tablet
-$screen-sm:                  768px !default;
-$screen-sm-min:              $screen-sm !default;
-
-// Medium screen / desktop
-$screen-md:                  992px !default;
-$screen-md-min:              $screen-md !default;
-
-// Large screen / wide desktop
-$screen-lg:                  1200px !default;
-$screen-lg-min:              $screen-lg !default;
