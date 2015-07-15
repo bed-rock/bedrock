@@ -2,50 +2,24 @@
 // Variables
 // ===============================
 
+// Colors
+//
+$color-primary: #334455  !default;
+$color-secondary: #554833 !default;
 
-# Created by https://www.gitignore.io
+$color-success: #7cb342  !default;
+$color-information: #3498db  !default;
+$color-warning: #ed9c20  !default;
+$color-error: #c0392b  !default;
 
-### Sass ###
-.sass-cache
-*.css.map
-
-
-### Bower ###
-bower_components
-.bower-cache
-.bower-registry
-.bower-tmp
-
-
-### grunt ###
-# Grunt usually compiles files inside this directory
-dist/
-
-# Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
-.tmp/
-
-
-### SublimeText ###
-# cache files for sublime text
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-
-# workspace files are user-specific
-*.sublime-workspace
-
-# project files should be checked into the repository, unless a significant
-# proportion of contributors will probably not be using SublimeText
-# *.sublime-project
-
-# sftp configuration file
-sftp-config.json
-
+$color-gray: #666 !default;
+$color-gray-dark: #333;
+$color-gray-light: #999 !default;
 
 
 // Scaffolding
 //
-$body-bg: #fff;
+$body-bg: #fefefe;
 $text-color: $color-gray-dark;
 $link-color: $color-primary;
 $link-hover-color: darken($link-color, 15%);
@@ -54,7 +28,7 @@ $link-hover-decoration: underline;
 
 // Typography
 //
-$font-family: "Open Sans", Arial, sans-serif;
+$font-family: "Roboto", Arial, sans-serif;
 $font-size: 1.4rem;
 $font-size-large: 1.8rem;
 $font-size-small: 1.2rem;
@@ -97,7 +71,7 @@ $button-default-color: #333;
 $button-default-bg: $color-white-dark;
 $button-default-border: $border-color-light;
 
-$button-primary-color: #fff;
+$button-primary-color: rgba(#fff, 0.9);
 $button-primary-bg: $color-primary;
 $button-primary-border: darken($button-primary-bg, 4%);
 
