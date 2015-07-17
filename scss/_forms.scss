@@ -1,11 +1,28 @@
 label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: $font-bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #999;
+  transition: all .3s;
+
+  &.active{
+    transform: translateY( - $input-height + $input-font-size );
+    font-size: 12px;
+  }
 }
 
 ::placeholder {
-   color: $input-color-placeholder;
+   color: #999;
+}
+
+.input_field {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 input, textarea, select {
@@ -13,81 +30,69 @@ input, textarea, select {
   display: block;
   width: 100%;
   height: $input-height;
-  line-height: 1;
-  padding: 0 15px 0 0;
-  margin: 0 0 15px 0;
+  line-height: $input-height;
+  padding: 0;
+  margin: 0;
   font-size: $input-font-size;
   background-color: transparent;
-  color: $inherit-color;
+  color: #333;
   text-indent: $input-text-indent;
   border: none;
-  border-bottom-width: $input-border-width;
-  border-bottom-color: $input-border-color;
-  border-bottom-style: solid;
-  border-radius: $input-border-radius;
+  box-shadow: 0 1px $input-border-color;
   transition: all .3s;
-  -webkit-appearance: none;
+  appearance: none;
 
   &:hover {
-    border-color: darken( $input-border-color, 20% );
+    border-color: darken( $input-border-color, 10% );
   }
 
   &:focus {
-    border-color: $input-hover-border-color;
+    box-shadow: 0 1px $input-hover-border-color;
+
+    & + label {
+      color: $color-primary;
+    }
   }
 
   &[disabled],
+  &[disabled] + label,
   &[readonly],
   fieldset[disabled] & {
-    background: $input-bg-disabled;
+    color: #999;
   }
 
   &[disabled],
   fieldset[disabled] & {
-    background: $input-bg-disabled;
-    cursor: $cursor-disabled;
+    cursor: not-allowed;
   }
 }
 
 textarea {
   height: auto;
-  line-height: $textarea-line-height;
+  min-height: 70px;
+  line-height: 1.4;
+  padding-top: ($input-height - $input-font-size) / 2;
 }
 
 select {
   cursor: pointer;
-  color: $text-smooth;
+  color: #999;
 
   & option {
-    color: $inherit-color;
+    color: #666;
   }
 }
-
-
-// Help text
-//
-// Apply to any element you wish to create light text for placement immediately
-// below a form control. Use for general help, formatting, or instructional text.
-
-.help-block {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  color: $color-gray;
-}
-
 
 /*
 ===========================
 #CustomSelect
 ===========================
 */
-// Criar como componente separado.
-//
 .custom_select {
   position: relative;
   display: block;
   width: 100%;
+  margin: 20px 0 15px;
 
   &:after {
     content: '';
@@ -107,85 +112,3 @@ select {
   }
 }
 
-// Bootstrap Copy
-//
-// Checkboxes and radios
-//
-// Indent the labels to position radios/checkboxes as hanging controls.
-
-.radio,
-.checkbox {
-  position: relative;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-  label {
-    min-height: $line-height-computed; // Ensure the input doesn't jump when there is no text
-    padding-left: 20px;
-    margin-bottom: 0;
-    font-weight: normal;
-    cursor: pointer;
-  }
-}
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
-}
-
-.radio + .radio,
-.checkbox + .checkbox {
-  margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
-}
-
-// Radios and checkboxes on same line
-.radio-inline,
-.checkbox-inline {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  margin-bottom: 0;
-  vertical-align: middle;
-  font-weight: normal;
-  cursor: pointer;
-}
-.radio-inline + .radio-inline,
-.checkbox-inline + .checkbox-inline {
-  margin-top: 0;
-  margin-left: 10px; // space out consecutive inline controls
-}
-
-// Apply same disabled cursor tweak as for inputs
-// Some special care is needed because <label>s don't inherit their parent's `cursor`.
-//
-// Note: Neither radios nor checkboxes can be readonly.
-input[type="radio"],
-input[type="checkbox"] {
-  &[disabled],
-  &.disabled,
-  fieldset[disabled] & {
-    cursor: $cursor-disabled;
-  }
-}
-// These classes are used directly on <label>s
-.radio-inline,
-.checkbox-inline {
-  &.disabled,
-  fieldset[disabled] & {
-    cursor: $cursor-disabled;
-  }
-}
-// These classes are used on elements with <label> descendants
-.radio,
-.checkbox {
-  &.disabled,
-  fieldset[disabled] & {
-    label {
-      cursor: $cursor-disabled;
-    }
-  }
-}

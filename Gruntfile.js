@@ -73,30 +73,26 @@ module.exports = function (grunt) {
       }
     },
 
-    // concat: {
-    //   basic: {
-    //     files: {
-    //       'css/style.css': [
-    //         'vendor/normalize.css/normalize.css',
-    //         'css/style.css',
-    //       ],
-    //     },
-    //   },
-    //   extras: {
-    //     options: {
-    //       separator: ';'
-    //     },
-    //     files: {
-    //       'js/all.js': [
-    //       'js/minified/move-top.min.js',
-    //       'js/minified/easing.min.js',
-    //       'js/minified/responsiveslides.min.js',
-    //       'js/minified/jquery.mixitup.min.js',
-    //       'js/minified/jquery.flexisel.min.js',
-    //       ],
-    //     }
-    //   }
-    // },
+    concat: {
+      basic: {
+        files: {
+          'css/style.css': [
+            'vendor/normalize.css/normalize.css',
+            'css/style.css',
+          ],
+        },
+      },
+      // extras: {
+      //   options: {
+      //     separator: ';'
+      //   },
+      //   files: {
+      //     'js/all.js': [
+      //     'js/minified/move-top.min.js',
+      //     ],
+      //   }
+      // }
+    },
 
     postcss: {
       options: {
@@ -125,7 +121,7 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-postcss');
 
-grunt.registerTask( 'default', [ 'sass', 'postcss' ] );
+grunt.registerTask( 'default', [ 'sass', 'postcss', 'concat:basic' ] );
 grunt.registerTask( 'css', [ 'sass', 'postcss', 'cssmin' ] );
 grunt.registerTask( 'js', [ 'uglify', 'concat' ] );
 
