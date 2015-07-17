@@ -28,7 +28,7 @@ module.exports = function (grunt) {
       },
       single_file: {
         files: {
-          'css/style.css': 'scss/general.scss'
+          'dist/css/style.css': 'scss/general.scss'
         }
       },
       // multiple_files: {
@@ -46,11 +46,11 @@ module.exports = function (grunt) {
       my_target: {
         files: [{
           expand: true,
-          cwd: 'assets/css/source/',
+          cwd: 'dist/css/',
           src: [
-          '*.css', '!_*.css'
+          '*.css', '!*.min.css'
           ],
-          dest: 'assets/css/minified/',
+          dest: 'dist/css/',
           ext: '.min.css'
         }]
       }
@@ -62,42 +62,41 @@ module.exports = function (grunt) {
           expand: true,
           flatten: true,
           mangle: false,
-          cwd: 'js/',
+          cwd: 'dist/js/',
           src: [
           '*.js',
-          '!*.min.js',
-          '!all.js',
+          '!*.min.js'
           ],
-          dest: 'js/minified/',
+          dest: 'dist/js/',
           ext: '.min.js'
         }]
       }
     },
 
-    concat: {
-      basic: {
-        files: {
-          'css/style.css': [
-            'vendor/normalize.css/normalize.css',
-            'css/style.css',
-          ],
-        },
-      },
-      extras: {
-        options: {
-          separator: ';'
-        },
-        files: {
-          'js/all.js': [
-          'js/minified/move-top.min.js',
-          'js/minified/easing.min.js',
-          'js/minified/responsiveslides.min.js',
-          'js/minified/jquery.mixitup.min.js',
-          'js/minified/jquery.flexisel.min.js',
-          ],
-        }
-      }
-    },
+    // concat: {
+    //   basic: {
+    //     files: {
+    //       'css/style.css': [
+    //         'vendor/normalize.css/normalize.css',
+    //         'css/style.css',
+    //       ],
+    //     },
+    //   },
+    //   extras: {
+    //     options: {
+    //       separator: ';'
+    //     },
+    //     files: {
+    //       'js/all.js': [
+    //       'js/minified/move-top.min.js',
+    //       'js/minified/easing.min.js',
+    //       'js/minified/responsiveslides.min.js',
+    //       'js/minified/jquery.mixitup.min.js',
+    //       'js/minified/jquery.flexisel.min.js',
+    //       ],
+    //     }
+    //   }
+    // },
 
     postcss: {
       options: {
@@ -111,9 +110,9 @@ module.exports = function (grunt) {
         expand: true,
         cascade: true,
         remove: true,
-        cwd: 'css/',
-        src: ['*.css'],
-        dest: 'css/'
+        cwd: 'dist/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'dist/css/'
       }
     }
 
@@ -126,8 +125,8 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-postcss');
 
-grunt.registerTask( 'default', [ 'sass', 'postcss', 'concat:basic' ] );
-grunt.registerTask( 'css', [ 'sass', 'postcss', 'cssmin', 'concat:basic' ] );
+grunt.registerTask( 'default', [ 'sass', 'postcss' ] );
+grunt.registerTask( 'css', [ 'sass', 'postcss', 'cssmin' ] );
 grunt.registerTask( 'js', [ 'uglify', 'concat' ] );
 
 };
