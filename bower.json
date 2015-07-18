@@ -6,7 +6,8 @@
     "cbfranca <cleidsonbf@gmail.com>"
   ],
   "dependencies": {
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "license": "MIT",
   "private": true
