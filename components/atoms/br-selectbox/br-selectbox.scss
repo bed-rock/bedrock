@@ -1,0 +1,94 @@
+// Reset
+* { 
+  box-sizing: border-box; 
+}
+body { 
+  margin: 40px;
+}
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: none;
+  height: 36px;
+  padding: 0;
+}
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+//
+// Variables
+//
+
+//
+// Style
+//
+.drop {
+  display: flex;
+  flex-direction: column;
+  
+  .drop-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    appearance: none;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: left;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  .drop-button-label {
+    flex-grow: 1;    
+  }
+  
+  .drop-button-icon {
+    flex-grow: 0;    
+  }
+  
+  .drop-content {
+    display: none;
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    top: 25%;
+    padding: 16px;
+    background: #F5F5F5;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 20px 2px;
+    
+    &.open {
+      display: block;
+    }
+    
+    ul {
+      margin: 16px -16px;
+      padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    li {
+      display: block;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 16px;
+      color: #333;
+      
+      &+li {
+        border-top: 1px solid #ddd;
+      }
+
+      &:hover {
+        background: #789;
+        color: #fff;
+      }
+    }
+  }  
+}
