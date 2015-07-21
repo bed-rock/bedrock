@@ -28,7 +28,8 @@ module.exports = function (grunt) {
       },
       single_file: {
         files: {
-          'dist/css/style.css': 'scss/general.scss'
+          'dist/css/style.css': 'scss/general.scss',
+          'components/atoms/br-selectbox/dist/br-selectbox.css': 'components/atoms/br-selectbox/src/br-selectbox.scss'
         }
       },
       // multiple_files: {
