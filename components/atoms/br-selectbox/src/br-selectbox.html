@@ -1,79 +1,85 @@
 <link rel="import" type="html" href="../../../../vendor/polymer/polymer.html">
 
 <dom-module id="br-selectbox">
-<link rel="import" type="css" href="../dist/br-selectbox.css">
 
-<template>
-  <div class="drop drop__down">
-    <button class="drop-button" on-click='_toggleSelect'>
-      <span class="drop-button-label">Selecione</span>
-      <i class="drop-button-icon fa fa-caret-down"></i>
-    </button>
-    <div class="drop-content" id="wrap-content">
+  <link rel="import" type="css" href="../dist/br-selectbox.css">
 
-      <input type="text" on-keyup='_onKeyPress' placeholder="Digite sua busca">
+  <template>
+    <div class="drop drop__down">
+      <button class="drop-button" on-click='_toggleSelect'>
+        <span class="drop-button-label">Selecione</span>
+        <i class="drop-button-icon fa fa-caret-down"></i>
+      </button>
+      <div class="drop-content" id="wrap-content">
 
-      <ul class="drop-content-list">
-        <template is="dom-repeat" items="{{options}}" >
-          <li>{{item.name}}</li>
-        </template>
-      </ul>
-    </div>
-  </div>    
-</template>
+        <input type="text" on-keyup='_onKeyPress' placeholder="Digite sua busca">
 
-<script>
-  Polymer({
-    is: 'br-selectbox',
-    properties: {
+        <ul class="drop-content-list">
+          <template is="dom-repeat" items="{{options}}" >
+            <li>{{item.name}}</li>
+          </template>
+        </ul>
+      </div>
+    </div>    
+  </template>
 
-      originalOptions: {
-        type: Array,
-        readyOnly: true
+  <script>
+    Polymer({
+      is: 'br-selectbox',
+      properties: {
+
+        originalOptions: {
+          type: Array,
+          readyOnly: true
+        },
+        options: {
+          type: Array,
+          value: []
+        }
       },
-      options: {
-        type: Array,
-        value: []
-      }
-    },
 
-    /* -- Lifecycle ------------------------------------------------- */
+      /* -- Lifecycle ------------------------------------------------- */
 
-    ready: function(){
-      this._setOriginalOptions(this.options);
-    },
+      ready: function(){
+        this._setOriginalOptions(this.options);
+      },
 
-    /* -- Private Methods ------------------------------------------- */
+      /* -- Private Methods ------------------------------------------- */
 
 
-    _setOriginalOptions: function(options){
-      this.originalOptions = options;
-    },
+      _setOriginalOptions: function(options){
+        this.originalOptions = options;
+      },
 
-    _toggleSelect: function(){
-      document.getElementById('wrap-content').classList.toggle('open')
-    },
+      _closeSelect: function(){
+        document.getElementById('wrap-content').classList.remove('open');
+      },
 
-    _onKeyPress: function(e) {     
+      _toggleSelect: function(){
+        document.getElementById('wrap-content').classList.toggle('open')
+      },
 
-      if(e.keyCode >= 65 && e.keyCode <= 90)
-      {
-        var teste = this.options.filter(function(value, index, array){          
-          return array[index].name.indexOf(e.target.value) !== -1;
-        });
-        this.options = teste;        
-      }
+      _onKeyPress: function(e) {     
 
-      if(!e.target.value.trim()){
-       // console.log(originalOptions);
-       this.options = this.originalOptions;
-     }
-   }
+        if(e.keyCode >= 65 && e.keyCode <= 90)
+        {
+          var filtered = this.options.filter(function(value, index, array){          
+            return array[index].name.indexOf(e.target.value) !== -1;
+          });
+          this.options = filtered;        
+        }
 
-   /* -- Public Methods -------------------------------------------- */
+        if(!e.target.value.trim())         
+         this.options = this.originalOptions;
+       
+     },
 
 
- });
 
-</script>
+     /* -- Public Methods -------------------------------------------- */
+
+
+   });
+  </script>
+
 </dom-module>
