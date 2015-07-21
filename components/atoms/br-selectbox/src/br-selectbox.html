@@ -10,9 +10,11 @@
       <i class="drop-button-icon fa fa-caret-down"></i>
     </button>
     <div class="drop-content" id="wrap-content">
-      <input type="text" placeholder="Digite sua busca">
+
+      <input type="search" on-keyup='onKeyPress' placeholder="Digite sua busca">
+
       <ul class="drop-content-list">
-        <template is="dom-repeat" items="{{options}}">
+        <template is="dom-repeat" items="{{options}}" >
           <li>{{item.name}}</li>
         </template>
       </ul>
@@ -24,14 +26,45 @@
   Polymer({
     is: 'br-selectbox',
     properties: {
+
+      originalOptions: {
+        type: Array,
+        readyOnly: true
+      },
       options: {
         type: Array,
         value: []
       }
     },
 
+    ready: function(){
+      this._setOriginalOptions(this.options);
+    },
+
+    _setOriginalOptions: function(options){
+      this.originalOptions = options;
+    },
+
     toggleSelect: function(){
       document.getElementById('wrap-content').classList.toggle('open')
+    },
+
+    onKeyPress: function(e) {     
+
+      if(e.keyCode >= 65 && e.keyCode <= 90)
+      {
+        var teste = this.options.filter(function(value, index, array){          
+          return array[index].name.indexOf(e.target.value) !== -1;
+        });
+        this.options = teste;        
+      }
+
+      if(!e.target.value.trim()){
+       // console.log(originalOptions);
+        this.options = this.originalOptions;
+      }
+      
+
     }
 
   });
