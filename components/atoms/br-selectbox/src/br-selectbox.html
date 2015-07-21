@@ -16,7 +16,7 @@
 
         <ul class="drop-content-list">
           <template is="dom-repeat" items="{{options}}" >
-            <li>{{item.name}}</li>
+            <li class="js-drop-content-item" on-click='_onItemSelected' data-value='{{item.id}}' >{{item.name}}</li>
           </template>
         </ul>
       </div>
@@ -32,20 +32,33 @@
           type: Array,
           readyOnly: true
         },
+        
         options: {
           type: Array,
           value: []
+        },
+
+        multiselect: {
+          type: Boolean,
+          value: false
         }
       },
+
 
       /* -- Lifecycle ------------------------------------------------- */
 
       ready: function(){
+
+        //_init();
+
         this._setOriginalOptions(this.options);
       },
 
       /* -- Private Methods ------------------------------------------- */
 
+      // _init: function() {
+      //    if(this.multiselect) 
+      // },
 
       _setOriginalOptions: function(options){
         this.originalOptions = options;
@@ -61,18 +74,29 @@
 
       _onKeyPress: function(e) {     
 
-        if(e.keyCode >= 65 && e.keyCode <= 90)
-        {
-          var filtered = this.options.filter(function(value, index, array){          
-            return array[index].name.indexOf(e.target.value) !== -1;
-          });
-          this.options = filtered;        
-        }
+        var filtered = this.options.filter(function(value, index, array){          
+          return array[index].name.indexOf(e.target.value) !== -1;
+        });
+        this.options = filtered;                
 
         if(!e.target.value.trim())         
          this.options = this.originalOptions;
        
      },
+
+    _onItemSelected: function(e){
+
+      if(this.multiselect === false) {
+        
+        var items = document.getElementsByClassName('js-drop-content-item');
+
+        for (var i = 0; i < items.length; i++)
+          items[i].classList.remove('is_selected');      
+      }
+
+      e.target.classList.toggle('is_selected');
+
+    }
 
 
 
@@ -81,5 +105,4 @@
 
    });
   </script>
-
 </dom-module>
