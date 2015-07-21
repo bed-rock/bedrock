@@ -5,13 +5,13 @@
 
 <template>
   <div class="drop drop__down">
-    <button class="drop-button" on-click='toggleSelect'>
+    <button class="drop-button" on-click='_toggleSelect'>
       <span class="drop-button-label">Selecione</span>
       <i class="drop-button-icon fa fa-caret-down"></i>
     </button>
     <div class="drop-content" id="wrap-content">
 
-      <input type="search" on-keyup='onKeyPress' placeholder="Digite sua busca">
+      <input type="text" on-keyup='_onKeyPress' placeholder="Digite sua busca">
 
       <ul class="drop-content-list">
         <template is="dom-repeat" items="{{options}}" >
@@ -37,19 +37,24 @@
       }
     },
 
+    /* -- Lifecycle ------------------------------------------------- */
+
     ready: function(){
       this._setOriginalOptions(this.options);
     },
+
+    /* -- Private Methods ------------------------------------------- */
+
 
     _setOriginalOptions: function(options){
       this.originalOptions = options;
     },
 
-    toggleSelect: function(){
+    _toggleSelect: function(){
       document.getElementById('wrap-content').classList.toggle('open')
     },
 
-    onKeyPress: function(e) {     
+    _onKeyPress: function(e) {     
 
       if(e.keyCode >= 65 && e.keyCode <= 90)
       {
@@ -61,13 +66,14 @@
 
       if(!e.target.value.trim()){
        // console.log(originalOptions);
-        this.options = this.originalOptions;
-      }
-      
+       this.options = this.originalOptions;
+     }
+   }
 
-    }
+   /* -- Public Methods -------------------------------------------- */
 
-  });
+
+ });
 
 </script>
 </dom-module>
