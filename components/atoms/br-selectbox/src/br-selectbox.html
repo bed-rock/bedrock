@@ -32,6 +32,12 @@
           type: Array,
           readyOnly: true
         },
+
+        selectedItems: {
+          type: Array,
+          readOnly: true,
+          value: []
+        },
         
         options: {
           type: Array,
@@ -41,6 +47,12 @@
         multiselect: {
           type: Boolean,
           value: false
+        },
+
+        model: {
+          type: Array,
+          value: [],
+          notify: true
         }
       },
 
@@ -48,17 +60,10 @@
       /* -- Lifecycle ------------------------------------------------- */
 
       ready: function(){
-
-        //_init();
-
         this._setOriginalOptions(this.options);
       },
 
-      /* -- Private Methods ------------------------------------------- */
-
-      // _init: function() {
-      //    if(this.multiselect) 
-      // },
+      /* -- Private Methods ------------------------------------------- */  
 
       _setOriginalOptions: function(options){
         this.originalOptions = options;
@@ -69,10 +74,10 @@
       },
 
       _toggleSelect: function(){
-        document.getElementById('wrap-content').classList.toggle('open')
+        document.getElementById('wrap-content').classList.toggle('open');
       },
 
-      _onKeyPress: function(e) {     
+      _onKeyPress: function(e) {
 
         var filtered = this.options.filter(function(value, index, array){          
           return array[index].name.indexOf(e.target.value) !== -1;
@@ -80,29 +85,69 @@
         this.options = filtered;                
 
         if(!e.target.value.trim())         
-         this.options = this.originalOptions;
-       
-     },
+         this.options = this.originalOptions;       
+      },
 
-    _onItemSelected: function(e){
+     _onItemSelected: function(e){
 
-      if(this.multiselect === false) {
-        
-        var items = document.getElementsByClassName('js-drop-content-item');
+        if(this._isMultiSelect()){
 
-        for (var i = 0; i < items.length; i++)
-          items[i].classList.remove('is_selected');      
+         if(e.target.classList.contains('is_selected')){        
+
+          var index = this._arrayObjectIndexOf(this.selectedItems, e.target.dataValue, "id");        
+          e.target.classList.remove('is_selected');
+          this.selectedItems.splice(index, 1);        
+
+        }else{
+
+          var isDuplicated = this.selectedItems.some(function(item) { 
+            return item.id === e.target.dataValue;
+          });        
+
+          if(!isDuplicated)
+            this.selectedItems.push({ "id": e.target.dataValue, "name": e.target.innerText });
+
+          e.target.classList.add('is_selected');
+        }
+
+      }else{
+        this._unselectAll();
+        e.target.classList.toggle('is_selected');
+        this.selectedItems.push({ "id": e.target.dataValue, "name": e.target.innerText });
       }
 
-      e.target.classList.toggle('is_selected');
+      this.model = this.selectedItems;
+
+    }, 
+
+    _isMultiSelect: function(){
+      return this.multiselect;
+    },
+
+    _unselectAll: function()  {
+     
+     var items = document.getElementsByClassName('js-drop-content-item');
+
+     for (var i = 0; i < items.length; i++)
+      items[i].classList.remove('is_selected');
+
+    this.selectedItems.splice(0, this.selectedItems.length);
+
+    },
+
+    _arrayObjectIndexOf: function(myArray, searchTerm, property) {
+
+      for(var i = 0, len = myArray.length; i < len; i++) {
+        if (myArray[i][property] === searchTerm) return i;
+      }
+      return -1;
 
     }
-
-
 
      /* -- Public Methods -------------------------------------------- */
 
 
    });
   </script>
+
 </dom-module>
