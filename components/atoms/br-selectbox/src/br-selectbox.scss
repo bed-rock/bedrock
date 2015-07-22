@@ -80,14 +80,16 @@ button {
       line-height: 36px;
       padding: 0 16px;
       color: #333;
+      cursor: pointer;
       
       &+li {
         border-top: 1px solid #ddd;
       }
 
-      &:hover {
+      &:hover, 
+      &.is_selected {
         background: #789;
-        color: #fff;
+        color: #fff;        
       }
     }
   }  
