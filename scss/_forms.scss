@@ -1,87 +1,131 @@
-label {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 36px;
-  line-height: 36px;
-  font-size: 14px;
-  color: #999;
-  transition: all .3s;
-
-  &.active{
-    transform: translateY( - $input-height + $input-font-size );
-    font-size: 12px;
-  }
-}
-
 ::placeholder {
-   color: #999;
+  color: $color-gray-light;
 }
 
-.input_field {
+.form_field {
   position: relative;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
 
-input, textarea, select {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: $input-height;
-  line-height: $input-height;
-  padding: 0;
-  margin: 0;
-  font-size: $input-font-size;
-  background-color: transparent;
-  color: #333;
-  text-indent: $input-text-indent;
-  border: none;
-  box-shadow: 0 1px $input-border-color;
-  transition: all .3s;
-  appearance: none;
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: $input-height;
+    font-size: 1rem;
+    color: $color-gray-light;
+    cursor: pointer;
+    user-select: none;
+    transition: $form-field-transition;
 
-  &:hover {
-    border-color: darken( $input-border-color, 10% );
-  }
-
-  &:focus {
-    box-shadow: 0 1px $input-hover-border-color;
-
-    & + label {
+    &.active {
+      transform: translateY( - $input-height );
+      font-size: 0.75rem;
       color: $color-primary;
     }
   }
 
-  &[disabled],
-  &[disabled] + label,
-  &[readonly],
-  fieldset[disabled] & {
-    color: #999;
+  input, textarea, select {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: $input-height;
+    line-height: $input-line-height;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    font-size: $input-font-size;
+    color: $input-color;
+    text-indent: $input-text-indent;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 1px $input-border-color;
+    transition: $form-field-transition;
+
+    &:hover {
+      border-color: darken( $input-border-color, 10% );
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1px $input-border-focus-color;
+    }
+
+    &[disabled],
+    &[readonly] {
+      color: $color-gray-light;
+    }
+
+    &[disabled] {
+      cursor: $cursor-disabled;
+    }
   }
 
-  &[disabled],
-  fieldset[disabled] & {
-    cursor: not-allowed;
+
+  textarea {
+    height: auto;
+    min-height: $textarea-min-height;
+    line-height: $textarea-line-height;
+    padding: 0.75rem 0;
   }
-}
 
-textarea {
-  height: auto;
-  min-height: 70px;
-  line-height: 1.4;
-  padding-top: ($input-height - $input-font-size) / 2;
-}
 
-select {
-  cursor: pointer;
-  color: #999;
+  select {
+    cursor: pointer;
+    color: $color-gray-light;
 
-  & option {
-    color: #666;
+    & option {
+      color: $color-gray;
+    }
   }
+
+
+  @import "extends/forms-extends";
+
+  input[type='checkbox'] {
+    @extend %field_check;
+  }
+
+  input[type='radio'] {
+    @extend %field_check;
+    border-radius: 50%;
+
+    &:checked {
+      border-radius: 0;
+    }
+  }
+
+
+  &__inline {
+    @extend .form_field;
+    display: inline-flex;
+    vertical-align: top;
+
+    &+& {
+      margin-left: 1rem;
+    }
+  }
+
+
+  &.checkbox,
+  &.radio {
+    @extend .form_field;
+    margin-top: 0;
+
+    label {
+      @extend label;
+      position: static;
+      order: 2;
+      padding-left: $input-check-size / 2;
+      line-height: $input-check-size;
+    }
+  }
+
 }
+
+
 
 /*
 ===========================

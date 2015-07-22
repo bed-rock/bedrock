@@ -19,6 +19,8 @@ $color-gray-light: #999 !default;
 $color-white-2: darken(#fff, 2%); // #FAFAFA
 $color-white-4: darken(#fff, 4%); // #F5F5F5
 $color-white-10: darken(#fff, 10%); // #E6E6E6
+$color-white-15: darken(#fff, 15%); // #D9D9D9
+$color-white-20: darken(#fff, 20%); // #CCCCCC
 
 $border-color-light: $color-white-10;
 
@@ -35,19 +37,19 @@ $link-hover-decoration: underline;
 // Typography
 //
 $font-family: "Roboto", Arial, sans-serif;
-$font-size: 1.4rem;
+$font-size: 14px;
 $font-size-large: 1.8rem;
 $font-size-small: 1.2rem;
 
-$font-size-h1: 3.6rem;
-$font-size-h2: 3.0rem;
+$font-size-h1: 3rem;
+$font-size-h2: 2rem;
 
-$line-height: $font-size / 10;
+$line-height: 1.25;
 $font-bold: 500;
 
 $font-weight-h1: 300;
 $font-weight-h2: 500;
-$headings-line-height: 1.1;
+$headings-line-height: 1.25;
 
 
 // Tables
@@ -88,29 +90,38 @@ $button-secondary-border: darken($button-secondary-bg, 4%);
 $button-link-disabled-color: $color-gray;
 
 $button-height: 36px;
-$button-padding: 8px;
+$button-padding: 1rem;
 $button-margin: 4px;
-$button-border-radius: 2px;
+$button-border-radius: 3px;
 
 
 // Form controls
 //
+$form-field-transition: all 0.2s;
 $input-bg: #fff;
 $input-bg-disabled: $color-gray-light;
-$input-font-size: 14px;
+$input-font-size: 1rem;
 $input-text-indent: 0;
-$input-color: #333;
+$input-color: $text-color;
 $input-color-placeholder: $color-gray-light;
-$input-height: 36px;
+
+$input-height: 2.5rem;
 $input-height-large: 48px;
 $input-height-small: 24px;
-$input-border-color: $color-white-10;
-$input-hover-border-color: $color-primary;
-$input-border-focus: $color-primary;
-$input-line-height: 1;
-$textarea-line-height: 1.4;
-$form-group-margin-bottom: 15px;
+$input-border-color: $color-gray-light;
+$input-border-focus-color: $color-primary;
+$input-line-height: $input-height;
+
+$textarea-min-height: 4rem;
+$textarea-line-height: $line-height;
+
 $cursor-disabled: not-allowed;
+
+$input-check-size: 16px;
+$input-check-border-width: 2px;
+$input-check-border-color: $color-gray-light;
+$input-check-checked-border-color: #3CB371;
+$input-check-disabled-border-color: $color-white-15;
 
 
 // Border radius
@@ -124,4 +135,78 @@ $break-phone: 480px;
 $break-tablet: 768px;
 $break-desktop: 992px;
 $break-large-desktop: 1200px;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         2rem !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px) + ($grid-gutter-width / 1rem) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px) + ($grid-gutter-width / 1rem) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px) + ($grid-gutter-width / 1rem) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
 

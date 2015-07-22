@@ -1,11 +1,11 @@
 // Core variables and mixins
 @import "variables";
 @import "mixins";
-//@import "extends";
 
 // Core Base
 @import "reset";
 @import "typography";
+@import "grid";
 @import "icons";
 
 // Core Components

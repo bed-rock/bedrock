@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         },
       },
       css: {
-        files: ['assets/**/*.scss'],
+        files: ['scss/**/*.scss'],
         tasks: ['css'],
         options: {
           interrupt: true,
@@ -80,6 +80,7 @@ module.exports = function (grunt) {
           'css/style.css': [
             'vendor/normalize.css/normalize.css',
             'css/style.css',
+            'vendor/flexboxgrid/dist/flexboxgrid.min.css',
           ],
         },
       },

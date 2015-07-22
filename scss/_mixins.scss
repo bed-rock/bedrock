@@ -1,12 +1,6 @@
-// Placeholders and Mixins
-// =======================
-
-// Placeholders
-
-%transition {
-  -moz-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-
+// ===============================
 // Mixins
+// ===============================
+
+@import "mixins/grid";
+@import "mixins/grid-framework";
