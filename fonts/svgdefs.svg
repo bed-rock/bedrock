@@ -1,4 +1,4 @@
-<svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-analysis6" viewBox="0 0 1024 1024">
 	<title>analysis6</title>
@@ -214,6 +214,14 @@
 <symbol id="icon-app-menu" viewBox="0 0 1024 1024">
 	<title>app-menu</title>
 	<path class="path1" d="M682 854v-172h172v172h-172zM682 598v-172h172v172h-172zM426 342v-172h172v172h-172zM682 170h172v172h-172v-172zM426 598v-172h172v172h-172zM170 598v-172h172v172h-172zM170 854v-172h172v172h-172zM426 854v-172h172v172h-172zM170 342v-172h172v172h-172z"></path>
+</symbol>
+<symbol id="icon-check" viewBox="0 0 1024 1024">
+	<title>check</title>
+	<path class="path1" d="M384 690l452-452 60 60-512 512-238-238 60-60z"></path>
+</symbol>
+<symbol id="icon-close" viewBox="0 0 1024 1024">
+	<title>close</title>
+	<path class="path1" d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
 </symbol>
 <symbol id="icon-user" viewBox="0 0 1024 1024">
 	<title>user</title>

@@ -1,10 +1,28 @@
 <link rel="import" type="html" href="../../../../vendor/polymer/polymer.html">
+<!-- <link rel="import" type="html" href="../vendor/iron-icon/iron-icon.html">
+<link rel="import" type="html" href="../vendor/iron-iconset-svg/iron-iconset-svg.html"> -->
 
 <dom-module id="br-selectbox">
 
-  <link rel="import" type="css" href="../dist/br-selectbox.css">
+  <link rel="import" type="css" href="../dist/br-selectbox.css">   
 
-  <template>
+  <template> 
+
+    <svg style="display:none;">
+      <defs>
+        <symbol id="icon-check" viewBox="0 0 1024 1024">
+          <title>check</title>
+          <path d="M384 690l452-452 60 60-512 512-238-238 60-60z"></path>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 1024 1024">
+          <title>close</title>
+          <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+   
+
     <div class="drop drop__down">
       <button class="drop-toggle" on-click='_toggleSelect'>
         <span class="drop-toggle-label">Selecione</span>
@@ -15,8 +33,12 @@
         <div class="drop-content">
 
           <div class="controls">
-            <button>&times;</button>
-            <button>&radic;</button>
+            <button on-click="_closeSelect">
+              <svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg>
+            </button>
+            <button>
+            <svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg>
+            </button>
           </div>
 
           <div class="form_field">
