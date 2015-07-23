@@ -10,9 +10,16 @@ module.exports = function (grunt) {
       //     livereload: true
       //   },
       // },
+      html: {
+        files: ['**/*.html'],        
+         options: {
+          interrupt: true,
+          livereload: true,
+        }
+      },
       css: {
         files: ['scss/**/*.scss', 'components/**/*.scss'],
-        tasks: ['css'],
+        tasks: ['default'],
         options: {
           interrupt: true,
           livereload: true,
@@ -106,10 +113,14 @@ module.exports = function (grunt) {
         expand: true,
         cascade: true,
         remove: true,
-        // cwd: 'dist/css/',
-        src: ['dist/css/*.css', 'dist/css/!*.min.css',
-              'components/atoms/**/*.css'],
-        dest: 'dist/css/'
+         // cwd: 'dist/css/',
+         // src: ['*.css', '!*.min.css',
+         //       'components/atoms/**/*.css'],
+          files: {
+          'dist/css/style.css': 'dist/css/style.css',
+          'components/atoms/br-selectbox/dist/br-selectbox.css': 'components/atoms/br-selectbox/dist/br-selectbox.css'
+        }
+        //dest: 'dist/css/'
       }
     }
 
@@ -122,8 +133,8 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-postcss');
 
-grunt.registerTask( 'default', [ 'sass', 'postcss', 'concat:basic' ] );
+grunt.registerTask( 'default', [ 'sass', 'postcss'] );
 grunt.registerTask( 'css', [ 'sass', 'postcss', 'cssmin' ] );
-grunt.registerTask( 'js', [ 'uglify', 'concat' ] );
+grunt.registerTask( 'js', [ 'uglify'] );
 
 };
