@@ -2,14 +2,14 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     watch: {
-      scripts: {
-        files: [ 'Gruntfile.js', 'js/*.js', 'css/*.css', '!**/all.**' ],
-        tasks: ['prod'],
-        options: {
-          interrupt: true,
-          livereload: true,
-        },
-      },
+      // scripts: {
+      //   files: [ 'Gruntfile.js', 'js/*.js', 'css/*.css', '!**/all.**' ],
+      //   tasks: ['prod'],
+      //   options: {
+      //     interrupt: true,
+      //     livereload: true
+      //   },
+      // },
       css: {
         files: ['scss/**/*.scss', 'components/**/*.scss'],
         tasks: ['css'],
@@ -48,9 +48,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/css/',
-          src: [
-          '*.css', '!*.min.css'
-          ],
+          src: ['*.css', '!*.min.css'],
           dest: 'dist/css/',
           ext: '.min.css'
         }]
@@ -108,8 +106,9 @@ module.exports = function (grunt) {
         expand: true,
         cascade: true,
         remove: true,
-        cwd: 'dist/css/',
-        src: ['*.css', '!*.min.css'],
+        // cwd: 'dist/css/',
+        src: ['dist/css/*.css', 'dist/css/!*.min.css',
+              'components/atoms/**/*.css'],
         dest: 'dist/css/'
       }
     }

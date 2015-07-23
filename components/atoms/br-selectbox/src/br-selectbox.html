@@ -6,10 +6,7 @@
 
   <template>
     <div class="drop drop__down">
-      <button class="drop-toggle" on-click='_toggleSelect'>
-        <span class="drop-toggle-label">Selecione</span>
-        <i class="drop-toggle-icon fa fa-caret-down"></i>
-      </button>
+      <button class="drop-toggle" on-click='_toggleSelect'>Selecione</button>
 
       <div class="drop-overlay" id="wrap-content">
         <div class="drop-content">
@@ -19,9 +16,7 @@
             <button>&radic;</button>
           </div>
 
-          <div class="form_field">
-            <input type="text" on-keyup='_onKeyPress' placeholder="Digite sua busca">
-          </div>
+          <input type="text" on-keyup='_onKeyPress' placeholder="Digite sua busca">
 
           <ul class="drop-content-list">
             <template is="dom-repeat" items="{{options}}" >

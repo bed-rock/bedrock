@@ -3,10 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>br-selectbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="../../../../vendor/webcomponentsjs/webcomponents-lite.min.js"></script>
-	<link rel="import" href="../src/br-selectbox.html">	
+	<link rel="import" href="../src/br-selectbox.html">
+
+  <!-- Demo style -->
+  <style>
+    html, input, button {
+      font-family: Arial;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  </style>
 </head>
-<body>	
-	<br-selectbox id='teste' model={{value}}  options='[{"id": 1, "name": "Judith"}, {"id": 2, "name": "Marie"}, {"id": 3, "name": "Joseph"}, {"id": 4, "name": "John"}]'></br-selectbox>	
+<body>
+
+	<br-selectbox id='teste' model={{value}}  options='[{"id": 1, "name": "Judith"}, {"id": 2, "name": "Marie"}, {"id": 3, "name": "Joseph"}, {"id": 4, "name": "John"}]'></br-selectbox>
+
 </body>
-</html> 
+</html>

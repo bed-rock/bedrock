@@ -1,63 +1,64 @@
-// Reset
-* {
-  box-sizing: border-box;
+// ===============================
+// Component Style
+// Component name: br-selectbox
+// ===============================
+
+@import 'variables';
+
+
+:host {
+  user-select: none;
 }
-:host, input, button {
-  font: 16px/1.25 Arial;
-}
-input {
-  width: 100%;
-  border: none;
-  background: none;
-  height: 36px;
-  padding: 0;
-}
-button {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-}
+
 :focus {
-  //outline: none;
+  outline: none;
 }
 
+.drop-toggle {
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  margin: 0;
+  padding: 0;
+  padding-right: $caret-size;
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $drop-toggle-border-color;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: $global-transition;
+    box-sizing: border-box;
 
-//
-// Variables
-//
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: darken($drop-toggle-border-color, 30%);
+  }
 
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: ($caret-border-width / 2) * -1;
+    border-top: $caret-border-width solid;
+    border-right: $caret-border-width solid transparent;
+    border-left: $caret-border-width solid transparent;
+  }
+}
 
-//
-// Style
-//
-.drop {
-  display: flex;
-  flex-direction: column;
+.drop-overlay {
+  display: none;
 
-  .drop-toggle {
+  &.open {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    appearance: none;
-    width: 100%;
-    height: 2rem;
-    line-height: 2rem;
-    text-align: left;
-    border-bottom: 1px solid #e6e6e6;
-  }
-
-  .drop-toggle-label {
-    flex-grow: 1;
-  }
-
-  .drop-toggle-icon {
-    flex-grow: 0;
-  }
-
-  .drop-overlay {
-    display: none;
+    justify-content: center;
+    align-items: flex-start;
     position: fixed;
     left: 0;
     right: 0;
@@ -65,62 +66,96 @@ button {
     bottom: 0;
     padding: 1rem;
     background: rgba(#000,0.7);
+    box-sizing: border-box;
+  }
+}
 
-    &.open {
-      display: flex;
-      justify-content: center;
+.drop-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px - ($global-font-size * 2);
+  max-width: 480px;
+  max-height: 100%;
+  overflow: hidden;
+  background: #F5F5F5;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 20px 2px;
+  box-sizing: border-box;
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    height: 2rem;
+    align-items: stretch;
+    border-bottom: 1px solid $global-border-color;
+
+    button {
+      margin: 0;
+      padding: 0 1rem;
+      appearance: none;
+      background: none;
+      border: none;
+      line-height: 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $controls-color;
+      cursor: pointer;
+      transition: $global-transition;
+      box-sizing: border-box;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $controls-hover-color;
+      }
     }
   }
 
-  .drop-content {
-    background: #F5F5F5;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 0 20px 2px;
+  input {
+    display: block;
+    width: 100%;
+    height: $input-height;
+    padding: 0 1rem;
+    border: none;
+    background: none;
+    transition: $global-transition;
+    box-sizing: border-box;
 
-    .controls {
-      display: flex;
-      justify-content: space-between;
-      height: 2rem;
-      align-items: stretch;
-      border-bottom: 1px solid #ddd;
-      box-sizing: content-box;
+    &:hover,
+    &:focus {
+      background-color: #fff;
+    }
+  }
 
-      button {
-        padding: 0 1rem;
-        line-height: 2rem;
-        font-size: 1rem;
-        font-weight: bold;
-      }
+  ul {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    border-top: 1px solid $global-border-color;
+  }
+
+  li {
+    display: block;
+    height: $list-items-height;
+    line-height: $list-items-height;
+    padding: 0 1rem;
+    color: $list-items-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: $global-transition;
+
+    &+li {
+      border-top: 1px solid $global-border-color;
     }
 
-    .form_field {
-      padding: 0 1rem;
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      max-height: 200px;
-      overflow-y: auto;
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-    }
-    li {
-      display: block;
-      height: 36px;
-      line-height: 36px;
-      padding: 0 16px;
-      color: #333;
-      cursor: pointer;
-
-      &+li {
-        border-top: 1px solid #ddd;
-      }
-
-      &:hover,
-      &.is_selected {
-        background: #789;
-        color: #fff;
-      }
+    &:hover,
+    &:focus,
+    &:active,
+    &.is_selected {
+      background: $list-items-hover-bg-color;
+      color: $list-items-hover-color;
     }
   }
 }
