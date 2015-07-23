@@ -90,8 +90,10 @@
     border-bottom: 1px solid $global-border-color;
 
     button {
+      display: flex;
+      align-items: center;
       margin: 0;
-      padding: 0 1rem;
+      padding: 0 0.5rem;
       appearance: none;
       background: none;
       border: none;
@@ -158,4 +160,10 @@
       color: $list-items-hover-color;
     }
   }
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  fill: currentColor;
 }
