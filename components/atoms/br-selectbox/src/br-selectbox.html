@@ -23,7 +23,6 @@
 
     <div class="drop drop__down">
       <button class="drop-toggle" on-click='_toggleSelect'>{{label}}</button>
-
       <div class="drop-overlay" id="wrap-content">
         <div class="drop-content"> 
 
@@ -37,7 +36,7 @@
 
           <ul class="drop-content-list">
             <template is="dom-repeat" items="{{options}}" >
-              <li class="js-drop-content-item" on-click='_onItemSelected' data-value='{{item.id}}' >{{item.name}}</li>
+              <li class="js-drop-content-item" on-click='_onItemSelected' data-value='{{item.key}}' >{{item.value}}</li>
             </template>
           </ul>
 
@@ -65,8 +64,7 @@
 
         label: {
           type: String,
-          readyOnly: true,
-          valye: 'Selecione'
+          readyOnly: true          
         },
 
         options: {
@@ -90,6 +88,7 @@
 
       ready: function(){
         this._setOriginalOptions(this.options);
+        this.label = 'Selecione';
       },
 
       /* -- Private Methods ------------------------------------------- */
@@ -108,10 +107,7 @@
 
       _onKeyPress: function(e) {
 
-        var filtered = this.options.filter(function(value, index, array){
-          return array[index].name.indexOf(e.target.value) !== -1;
-        });
-        this.options = filtered;
+        this.options = this._search(this.options, e.target.value);                
 
         if(!e.target.value.trim())
          this.options = this.originalOptions;
@@ -123,7 +119,7 @@
 
          if(e.target.classList.contains('is_selected')){
 
-          var index = this._arrayObjectIndexOf(this.selectedItems, e.target.dataValue, "id");
+          var index = this._arrayObjectIndexOf(this.selectedItems, e.target.dataValue, "key");
           e.target.classList.remove('is_selected');
           this.selectedItems.splice(index, 1);
 
@@ -134,15 +130,22 @@
           });
 
           if(!isDuplicated)
-            this.selectedItems.push({ "id": e.target.dataValue, "name": e.target.innerText });
+            this.selectedItems.push({ "key": e.target.dataValue, "value": e.target.innerText });
 
-          e.target.classList.add('is_selected');
+          e.target.classList.add('is_selected');          
         }
+
+        if(this.selectedItems.length > 0)
+          this.label = '( ' + this.selectedItems.length + ' Selecionados ) ';
+        else
+          this.label = 'Selecione';
 
       }else{
         this._unselectAll();
         e.target.classList.toggle('is_selected');
-        this.selectedItems.push({ "id": e.target.dataValue, "name": e.target.innerText });
+        this.label = e.target.innerText;
+        this._closeSelect();
+        this.selectedItems.push({ "key": e.target.dataValue, "value": e.target.innerText });
       }
 
       this.model = this.selectedItems;
@@ -170,11 +173,17 @@
         if (myArray[i][property] === searchTerm) return i;
       }
       return -1;
+    },
+
+    _search: function(collection, query){
+
+      return collection.filter(function(value, index, array){
+        return array[index].value.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+      });
 
     }
 
      /* -- Public Methods -------------------------------------------- */
-
 
    });
   </script>

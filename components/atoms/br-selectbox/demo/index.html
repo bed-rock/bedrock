@@ -17,10 +17,27 @@
   </style>
 </head>
 <body>
+	
+	<!-- 
+		Usage: 
+		Tag: <br-selectbox></br-selectbox>
+		Attributes:
+				  model: Type: Array
+				  		 Description: Returns the selected option(s)
+				  		 Required: true
+				options: Type: Array
+						 Description: Collection of object with key and value to populate br-selectbox
+						 Required: true
+			multiselect: Type: Boolean
+						 Desription: Set if br-selectbox is multiselect.
+						 Default value: false
+						 Required: false
 
+	 -->
 	<br-selectbox
 			model={{value}}
-			options='[{"id": 1, "name": "Judith"}, {"id": 2, "name": "Marie"}, {"id": 3, "name": "Joseph"}, {"id": 4, "name": "John"}]'>
+			options='[{"key": 1, "value": "Judith"}, {"key": 2, "value": "Marie"}, {"key": 3, "value": "Joseph"}, {"key": 4, "value": "John"}]'
+			>
 	</br-selectbox>
 
 </body>
