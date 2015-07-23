@@ -6,21 +6,33 @@
 
   <template>
     <div class="drop drop__down">
-      <button class="drop-button" on-click='_toggleSelect'>
-        <span class="drop-button-label">Selecione</span>
-        <i class="drop-button-icon fa fa-caret-down"></i>
+      <button class="drop-toggle" on-click='_toggleSelect'>
+        <span class="drop-toggle-label">Selecione</span>
+        <i class="drop-toggle-icon fa fa-caret-down"></i>
       </button>
-      <div class="drop-content" id="wrap-content">
 
-        <input type="text" on-keyup='_onKeyPress' placeholder="Digite sua busca">
+      <div class="drop-overlay" id="wrap-content">
+        <div class="drop-content">
 
-        <ul class="drop-content-list">
-          <template is="dom-repeat" items="{{options}}" >
-            <li class="js-drop-content-item" on-click='_onItemSelected' data-value='{{item.id}}' >{{item.name}}</li>
-          </template>
-        </ul>
+          <div class="controls">
+            <button>&times;</button>
+            <button>&radic;</button>
+          </div>
+
+          <div class="form_field">
+            <input type="text" on-keyup='_onKeyPress' placeholder="Digite sua busca">
+          </div>
+
+          <ul class="drop-content-list">
+            <template is="dom-repeat" items="{{options}}" >
+              <li class="js-drop-content-item" on-click='_onItemSelected' data-value='{{item.id}}' >{{item.name}}</li>
+            </template>
+          </ul>
+
+        </div>
       </div>
-    </div>    
+
+    </div>
   </template>
 
   <script>
@@ -38,7 +50,7 @@
           readOnly: true,
           value: []
         },
-        
+
         options: {
           type: Array,
           value: []
@@ -63,7 +75,7 @@
         this._setOriginalOptions(this.options);
       },
 
-      /* -- Private Methods ------------------------------------------- */  
+      /* -- Private Methods ------------------------------------------- */
 
       _setOriginalOptions: function(options){
         this.originalOptions = options;
@@ -79,30 +91,30 @@
 
       _onKeyPress: function(e) {
 
-        var filtered = this.options.filter(function(value, index, array){          
+        var filtered = this.options.filter(function(value, index, array){
           return array[index].name.indexOf(e.target.value) !== -1;
         });
-        this.options = filtered;                
+        this.options = filtered;
 
-        if(!e.target.value.trim())         
-         this.options = this.originalOptions;       
+        if(!e.target.value.trim())
+         this.options = this.originalOptions;
       },
 
      _onItemSelected: function(e){
 
         if(this._isMultiSelect()){
 
-         if(e.target.classList.contains('is_selected')){        
+         if(e.target.classList.contains('is_selected')){
 
-          var index = this._arrayObjectIndexOf(this.selectedItems, e.target.dataValue, "id");        
+          var index = this._arrayObjectIndexOf(this.selectedItems, e.target.dataValue, "id");
           e.target.classList.remove('is_selected');
-          this.selectedItems.splice(index, 1);        
+          this.selectedItems.splice(index, 1);
 
         }else{
 
-          var isDuplicated = this.selectedItems.some(function(item) { 
+          var isDuplicated = this.selectedItems.some(function(item) {
             return item.id === e.target.dataValue;
-          });        
+          });
 
           if(!isDuplicated)
             this.selectedItems.push({ "id": e.target.dataValue, "name": e.target.innerText });
@@ -118,14 +130,14 @@
 
       this.model = this.selectedItems;
 
-    }, 
+    },
 
     _isMultiSelect: function(){
       return this.multiselect;
     },
 
     _unselectAll: function()  {
-     
+
      var items = document.getElementsByClassName('js-drop-content-item');
 
      for (var i = 0; i < items.length; i++)

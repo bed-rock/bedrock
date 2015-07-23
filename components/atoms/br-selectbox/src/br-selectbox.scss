@@ -1,14 +1,13 @@
 // Reset
-* { 
-  box-sizing: border-box; 
+* {
+  box-sizing: border-box;
 }
-body { 
-  margin: 40px;
+:host, input, button {
+  font: 16px/1.25 Arial;
 }
 input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #ddd;
   background: none;
   height: 36px;
   padding: 0;
@@ -19,10 +18,15 @@ button {
   margin: 0;
   background: none;
 }
+:focus {
+  //outline: none;
+}
+
 
 //
 // Variables
 //
+
 
 //
 // Style
@@ -30,44 +34,70 @@ button {
 .drop {
   display: flex;
   flex-direction: column;
-  
-  .drop-button {
+
+  .drop-toggle {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
     appearance: none;
     width: 100%;
-    height: 36px;
-    line-height: 36px;
+    height: 2rem;
+    line-height: 2rem;
     text-align: left;
     border-bottom: 1px solid #e6e6e6;
   }
-  
-  .drop-button-label {
-    flex-grow: 1;    
+
+  .drop-toggle-label {
+    flex-grow: 1;
   }
-  
-  .drop-button-icon {
-    flex-grow: 0;    
+
+  .drop-toggle-icon {
+    flex-grow: 0;
   }
-  
-  .drop-content {
+
+  .drop-overlay {
     display: none;
     position: fixed;
-    left: 16px;
-    right: 16px;
-    top: 25%;
-    padding: 16px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    background: rgba(#000,0.7);
+
+    &.open {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .drop-content {
     background: #F5F5F5;
     box-shadow: rgba(0, 0, 0, 0.3) 0 0 20px 2px;
-    
-    &.open {
-      display: block;
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      height: 2rem;
+      align-items: stretch;
+      border-bottom: 1px solid #ddd;
+      box-sizing: content-box;
+
+      button {
+        padding: 0 1rem;
+        line-height: 2rem;
+        font-size: 1rem;
+        font-weight: bold;
+      }
     }
-    
+
+    .form_field {
+      padding: 0 1rem;
+    }
+
     ul {
-      margin: 16px -16px;
+      margin: 0;
       padding: 0;
       max-height: 200px;
       overflow-y: auto;
@@ -81,16 +111,16 @@ button {
       padding: 0 16px;
       color: #333;
       cursor: pointer;
-      
+
       &+li {
         border-top: 1px solid #ddd;
       }
 
-      &:hover, 
+      &:hover,
       &.is_selected {
         background: #789;
-        color: #fff;        
+        color: #fff;
       }
     }
-  }  
+  }
 }
