@@ -9,6 +9,13 @@
     "normalize.css": "~3.0.3",
     "polymer": "Polymer/polymer#^1.0.7"
   },
-  "license": "MIT"
+   "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "private": true
 }
