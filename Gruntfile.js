@@ -11,7 +11,7 @@ module.exports = function (grunt) {
       //   },
       // },
       html: {
-        files: ['**/*.html'],        
+        files: ['**/*.html'],
          options: {
           interrupt: true,
           livereload: true,
@@ -62,45 +62,6 @@ module.exports = function (grunt) {
       }
     },
 
-    uglify: {
-      my_target: {
-        files: [{
-          expand: true,
-          flatten: true,
-          mangle: false,
-          cwd: 'dist/js/',
-          src: [
-          '*.js',
-          '!*.min.js'
-          ],
-          dest: 'dist/js/',
-          ext: '.min.js'
-        }]
-      }
-    },
-
-    concat: {
-      basic: {
-        files: {
-          'css/style.css': [
-            'vendor/normalize.css/normalize.css',
-            'css/style.css',
-            'vendor/flexboxgrid/dist/flexboxgrid.min.css',
-          ],
-        },
-      },
-      // extras: {
-      //   options: {
-      //     separator: ';'
-      //   },
-      //   files: {
-      //     'js/all.js': [
-      //     'js/minified/move-top.min.js',
-      //     ],
-      //   }
-      // }
-    },
-
     postcss: {
       options: {
         safe: true,
@@ -122,6 +83,44 @@ module.exports = function (grunt) {
         }
         //dest: 'dist/css/'
       }
+    },
+
+    uglify: {
+      my_target: {
+        files: [{
+          expand: true,
+          flatten: true,
+          mangle: false,
+          cwd: 'dist/js/',
+          src: [
+          '*.js',
+          '!*.min.js'
+          ],
+          dest: 'dist/js/',
+          ext: '.min.js'
+        }]
+      }
+    },
+
+    concat: {
+      basic: {
+        files: {
+          'dist/css/style.css': [
+            'vendor/normalize.css/normalize.css',
+            'dist/css/style.css'
+          ],
+        },
+      },
+      // extras: {
+      //   options: {
+      //     separator: ';'
+      //   },
+      //   files: {
+      //     'js/all.js': [
+      //     'js/minified/move-top.min.js',
+      //     ],
+      //   }
+      // }
     }
 
   });
@@ -133,7 +132,7 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-postcss');
 
-grunt.registerTask( 'default', [ 'sass', 'postcss'] );
+grunt.registerTask( 'default', [ 'sass', 'postcss', 'concat' ] );
 grunt.registerTask( 'css', [ 'sass', 'postcss', 'cssmin' ] );
 grunt.registerTask( 'js', [ 'uglify'] );
 

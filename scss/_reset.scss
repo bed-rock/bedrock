@@ -32,15 +32,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-}
-
-
-/*
- * Main display reset for IE support.
- * Source: http://weblog.west-wind.com/posts/2015/Jan/12/main-HTML5-Tag-not-working-in-Internet-Explorer-91011
- */
-main {
-  display: block;
+  margin: 0;
 }
 
 
@@ -51,44 +43,4 @@ main {
 
 figure {
   margin: 0;
-}
-
-
-// Images
-img {
-  vertical-align: middle;
-}
-
-// Responsive images (ensure images don't scale beyond their parents)
-// .img-responsive {
-//   @include img-responsive;
-// }
-
-// Perfect circle
-.img-circle {
-  border-radius: 50%; // set radius in percents
-}
-
-
-// Horizontal rules
-hr {
-  margin-top:    24px;
-  margin-bottom: 24px;
-  border: 0;
-  border-top: 1px solid $border-color-light;
-}
-
-
-// Only display content to screen readers
-//
-// See: http://a11yproject.com/posts/how-to-hide-content/
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
 }
