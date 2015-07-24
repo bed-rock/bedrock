@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         }
       },
       css: {
-        files: ['scss/**/*.scss', 'components/**/*.scss'],
+        files: ['scss/**/*.scss'],
         tasks: ['default'],
         options: {
           interrupt: true,
@@ -35,8 +35,7 @@ module.exports = function (grunt) {
       },
       single_file: {
         files: {
-          'dist/css/style.css': 'scss/general.scss',
-          'components/atoms/br-selectbox/dist/br-selectbox.css': 'components/atoms/br-selectbox/src/br-selectbox.scss'
+          'dist/css/style.css': 'scss/general.scss'
         }
       },
       // multiple_files: {
@@ -74,14 +73,9 @@ module.exports = function (grunt) {
         expand: true,
         cascade: true,
         remove: true,
-         // cwd: 'dist/css/',
-         // src: ['*.css', '!*.min.css',
-         //       'components/atoms/**/*.css'],
-          files: {
-          'dist/css/style.css': 'dist/css/style.css',
-          'components/atoms/br-selectbox/dist/br-selectbox.css': 'components/atoms/br-selectbox/dist/br-selectbox.css'
-        }
-        //dest: 'dist/css/'
+        cwd: 'dist/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'dist/css/'
       }
     },
 

@@ -18,6 +18,7 @@ $color-gray-light: #999 !default;
 
 $color-white-2: darken(#fff, 2%); // #FAFAFA
 $color-white-4: darken(#fff, 4%); // #F5F5F5
+$color-white-5: darken(#fff, 5%); // #F0F0F0
 $color-white-10: darken(#fff, 10%); // #E6E6E6
 $color-white-15: darken(#fff, 15%); // #D9D9D9
 $color-white-20: darken(#fff, 20%); // #CCCCCC
@@ -34,6 +35,8 @@ $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
 
 $border-radius-large: 50%;
+
+$transition: all 0.2s;
 
 
 // Typography
@@ -128,9 +131,9 @@ $input-check-disabled-border-color: $color-white-15;
 
 // Nav Bar
 //
-$nav_bg: darken(#fff, 10%);
-$nav_height: 50px;
-$nav_link_color: darken($nav_bg, 40%);
+$header_bg: $color-white-10;
+$header_height: 48px;
+$header_link_color: darken($header_bg, 40%);
 
 
 // Media queries breakpoints
