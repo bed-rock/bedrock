@@ -37,3 +37,4 @@ dist/
 sftp-config.json
 
 vendor
+node_modules
