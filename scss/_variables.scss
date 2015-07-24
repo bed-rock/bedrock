@@ -33,6 +33,8 @@ $link-color: $color-primary;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
 
+$border-radius-large: 50%;
+
 
 // Typography
 //
@@ -124,9 +126,11 @@ $input-check-checked-border-color: #3CB371;
 $input-check-disabled-border-color: $color-white-15;
 
 
-// Border radius
+// Nav Bar
 //
-$border-radius-large: 50%;
+$nav_bg: darken(#fff, 10%);
+$nav_height: 50px;
+$nav_link_color: darken($nav_bg, 40%);
 
 
 // Media queries breakpoints
