@@ -5,9 +5,9 @@
     "marcelo-ribeiro <marceloribeiromidia@gmail.com>",
     "cbfranca <cleidsonbf@gmail.com>"
   ],
-  "main": {
+  "main": [
     "scss/general.scss"
-  },
+  ],
   "dependencies": {
     "normalize.css": "~3.0.3",
     "polymer": "Polymer/polymer#^1.0.7"
