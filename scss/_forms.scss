@@ -21,7 +21,7 @@
     transition: $form-field-transition;
 
     &.active {
-      transform: translateY( - $input-height );
+      transform: translateY( - 1.5rem );
       font-size: 0.75rem;
       color: $color-primary;
     }
