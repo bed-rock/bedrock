@@ -3,24 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <title>Bedrock Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../dist/css/style.css">
+  <link rel="import" href="../../br-nav/src/br-nav.html">
+
+  <style>
+    .toggle_menu {
+      position: fixed;
+      right: 0;
+    }
+    h1 {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
+
+  <button class="toggle_menu">TOGGLE MENU</button>
 
   <!-- Emmet shortcut -->
   <!-- section.page>header.page-header+nav.page-nav+main.page-main -->
   <section class="page">
 
     <header class="page-header">
-
+      <nav class="nav_bar">
+        <ul class="nav nav__header">
+          <li class="nav-logo">
+            <a href="/">
+              <!--<img src="http://placehold.it/420x60?text=Logo" alt="Logo">-->
+              <img src="http://azpanelh.azurewebsites.net/Assets/img/logo_azimutit.png" alt="Logo">
+            </a>
+          </li>
+        </ul>
+        <ul class="nav nav__control_area">
+          <li>
+            <a href="#" class="nav-btn">
+              <i class="nav-btn-icon fa fa-pie-chart"></i>
+              <span class="nav-btn-text">Gerencial</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-btn">
+              <i class="nav-btn-icon fa fa-dollar"></i>
+              <span class="nav-btn-text">Financeiro</span>
+            </a>
+          </li>
+        </ul>
+        <div class="nav nav__search">
+          <input type="text" placeholder="Busque por um cliente para visualizar sua carteira">
+        </div>
+        <ul class="nav nav__right">
+          <li class="visible-tablet">
+            <button class="nav-btn">
+              <i class="nav-btn-icon fa fa-globe"></i>
+              &nbsp;<i class="fa fa-caret-down"></i>
+            </button>
+          </li>
+          <li>
+            <button class="nav-btn">
+              <i class="nav-btn-icon fa fa-th"></i>
+            </button>
+          </li>
+          <li class="visible-tablet">
+            <button class="nav-btn">
+              <i class="nav-btn-icon fa fa-user"></i>
+              &nbsp;<i class="fa fa-caret-down"></i>
+            </button>
+          </li>
+          <li><button class="nav-btn nav-btn_toogle"><i class="nav-btn-icon fa fa-bars"></i></button></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav class="page-nav">
-
-    </nav>
+    <br-nav></br-nav>
 
     <main class="page-main">
-
+      <h1>Main</h1>
     </main>
 
   </section>
