@@ -20,16 +20,17 @@
 </head>
 <body>
 
-  <button class="toggle_menu">TOGGLE MENU</button>
-
   <section class="page">
 
     <br-header></br-header>
 
-    <br-nav></br-nav>
+    <br-nav items='[{"label":"Item 01", "link":"#", "icon":"user", "submenu":[{"label":"Item 01.1", "link":"#", "icon":"user"}]},
+                    {"label":"Item 02", "link":"#", "icon":"user"},
+                    {"label":"Item 03", "link":"#", "icon":"user"},
+                    {"label":"Item 04", "link":"#", "icon":"user"}]'></br-nav>
 
     <main class="page-main">
-      <h1>Main</h1>
+      <h1>Page title</h1>
     </main>
 
   </section>

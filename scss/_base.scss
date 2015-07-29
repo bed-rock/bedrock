@@ -22,3 +22,10 @@ hr {
   border: 0;
   border-top: 1px solid $border-color-light;
 }
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+}
