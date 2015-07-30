@@ -113,23 +113,7 @@ dt, b, strong, th {
 }
 
 .page_title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 300;
-  margin: 0 0 2rem;
-}
-
-.text__lowercase {
-  text-transform: lowercase;
-}
-
-.text__uppercase {
-  text-transform: uppercase;
-}
-
-.text__capitalize {
-  text-transform: capitalize;
-}
-
-.font__bold {
-  font-weight: $font-bold;
+  margin: 0 0 1em;
 }

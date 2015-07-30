@@ -1,25 +1,55 @@
-.icon-caret {
-  &:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    display: block;
-    width: 0;
-    height: 0;
-    margin-top: -2px;
-    border-top: 4px dashed;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-  }
+// Typography
+.text_success {
+  color: $color-success;
 }
 
+.text_info {
+  color: $color-information;
+}
+
+.text_warning {
+  color: $color-warning;
+}
+
+.text_error {
+  color: $color-error;
+}
+
+.text_lowercase {
+  text-transform: lowercase;
+}
+
+.text_uppercase {
+  text-transform: uppercase;
+}
+
+.text_capitalize {
+  text-transform: capitalize;
+}
+
+.font_bold {
+  font-weight: $font-bold;
+}
+
+// Icon
+.icon-caret {
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+
+// Visible
 .visible-tablet {
   display: none !important;
   @media (min-width: $screen-phone) {
     display: flex !important;
   }
 }
+
 
 // Responsive images (ensure images don't scale beyond their parents)
 .img-responsive {
@@ -31,6 +61,7 @@
 .img-circle {
   border-radius: 50%;
 }
+
 
 // Only display content to screen readers
 //

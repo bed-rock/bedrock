@@ -1,3 +1,23 @@
+// Reset elements
+//
+:focus {
+  outline: none;
+}
+
+hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 0;
+  border-top: 1px solid $border-color-light;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+}
+
 // Base
 //
 .page {
@@ -11,21 +31,4 @@
   flex-grow: 1;
   overflow-y: auto;
   padding: 2rem 1rem;
-}
-
-
-// Elements
-//
-hr {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  border: 0;
-  border-top: 1px solid $border-color-light;
-}
-
-button {
-  background: none;
-  border: none;
-  padding: 0;
-  text-align: left;
 }
