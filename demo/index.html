@@ -22,11 +22,21 @@
 
   <section class="page">
 
-    <br-header></br-header>
+    <br-header show-search></br-header>
 
-    <br-nav items='[{"label":"Item 01", "link":"#", "icon":"user", "submenu":[{"label":"Item 01.1", "link":"#", "icon":"user"}]},
+    <br-nav items='[{"label":"Item 01", "link":"#", "icon":"user",
+                      "submenu":[
+                        {"label":"Item 01.1", "link":"#"},
+                        {"label":"Item 01.2", "link":"#"},
+                        {"label":"Item 01.3", "link":"#"}
+                    ]},
                     {"label":"Item 02", "link":"#", "icon":"user"},
-                    {"label":"Item 03", "link":"#", "icon":"user"},
+                    {"label":"Item 03", "link":"#", "icon":"user",
+                    "submenu":[
+                        {"label":"Item 03.1", "link":"#"},
+                        {"label":"Item 03.2", "link":"#"},
+                        {"label":"Item 03.3", "link":"#"}
+                    ]},
                     {"label":"Item 04", "link":"#", "icon":"user"}]'></br-nav>
 
     <main class="page-main">
