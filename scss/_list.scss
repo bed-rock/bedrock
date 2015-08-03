@@ -1,0 +1,33 @@
+.list {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+
+  li {
+    height: $list-items-height;
+    line-height: $list-items-height;
+    padding: 0 1rem;
+    color: $list-items-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: $transition;
+
+    &+li {
+      border-top: 1px solid $color-white-20;
+    }
+
+    &:hover,
+    &:focus,
+    &.is_selected {
+      background: $list-items-hover-bg-color;
+      color: $list-items-hover-color;
+    }
+
+    &:active {
+      background: #000;
+    }
+
+  }
+}
