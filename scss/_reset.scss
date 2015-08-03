@@ -36,6 +36,20 @@ body {
 }
 
 
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+:focus {
+  outline: none;
+}
+
+
 // Figures
 //
 // We reset this here because previously Normalize had no `figure` margins. This

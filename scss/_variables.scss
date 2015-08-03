@@ -94,8 +94,10 @@ $button-secondary-border: darken($button-secondary-bg, 4%);
 
 $button-link-disabled-color: $color-gray;
 
-$button-height: 36px;
-$button-padding: 1rem;
+$button-height: 2.5rem;
+$button-height-small: 2rem;
+$button-height-large: 3rem;
+$button-padding-horizontal: 1rem;
 $button-margin: 4px;
 $button-border-radius: 3px;
 
@@ -111,8 +113,8 @@ $input-color: $text-color;
 $input-color-placeholder: $color-gray-light;
 
 $input-height: 2.5rem;
-$input-height-large: 48px;
-$input-height-small: 24px;
+$input-height-small: 2rem;
+$input-height-large: 3rem;
 $input-border-color: $color-gray-light;
 $input-border-focus-color: $color-primary;
 $input-line-height: $input-height;
