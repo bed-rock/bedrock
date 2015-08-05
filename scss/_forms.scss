@@ -79,7 +79,7 @@ select,
 
   &:focus {
     outline: none;
-    box-shadow: 0 1px $input-border-focus-color;
+    box-shadow: 0 1px $input-border-color-focus;
   }
 
   &[disabled],
@@ -89,6 +89,10 @@ select,
 
   &[disabled] {
     cursor: $cursor-disabled;
+  }
+
+  &.error {
+    box-shadow: 0 1px $input-border-color-error;
   }
 }
 

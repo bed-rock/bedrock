@@ -35,14 +35,19 @@ body {
   margin: 0;
 }
 
-
 button {
+  display: inline-flex;
+  align-items: center;
   background: none;
   border: none;
   padding: 0;
   text-align: left;
-  display: flex;
-  align-items: center;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  vertical-align: middle;
 }
 
 :focus {

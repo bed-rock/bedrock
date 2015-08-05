@@ -4,8 +4,8 @@
 
 // Colors
 //
-$color-primary: #334455  !default;
-$color-secondary: #554833 !default;
+$color-primary: #334455 !default;
+$color-secondary: #12403e !default;
 
 $color-success: #7cb342  !default;
 $color-information: #3498db  !default;
@@ -76,32 +76,6 @@ $table-bg-active: $table-bg-hover;
 $table-border-color: #ddd;
 
 
-// Buttons
-//
-$button-font-weight: 400;
-
-$button-default-color: #333;
-$button-default-bg: $color-white-10;
-$button-default-border: $border-color-light;
-
-$button-primary-color: rgba(#fff, 0.9);
-$button-primary-bg: $color-primary;
-$button-primary-border: darken($button-primary-bg, 4%);
-
-$button-secondary-color: #fff;
-$button-secondary-bg: $color-secondary;
-$button-secondary-border: darken($button-secondary-bg, 4%);
-
-$button-link-disabled-color: $color-gray;
-
-$button-height: 2.5rem;
-$button-height-small: 2rem;
-$button-height-large: 3rem;
-$button-padding-horizontal: 1rem;
-$button-margin: 4px;
-$button-border-radius: 3px;
-
-
 // Form controls
 //
 $form-field-transition: all 0.2s;
@@ -115,8 +89,10 @@ $input-color-placeholder: $color-gray-light;
 $input-height: 2.5rem;
 $input-height-small: 2rem;
 $input-height-large: 3rem;
+
 $input-border-color: $color-gray-light;
-$input-border-focus-color: $color-primary;
+$input-border-color-focus: $color-primary;
+$input-border-color-error: $color-error;
 $input-line-height: $input-height;
 
 $textarea-min-height: 4rem;
