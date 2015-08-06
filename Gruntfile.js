@@ -37,16 +37,7 @@ module.exports = function (grunt) {
         files: {
           'dist/css/style.css': 'scss/general.scss'
         }
-      },
-      // multiple_files: {
-      //   files: [{
-      //     expand: true,
-      //     cwd: 'scss/',
-      //     src: ['*.scss', '!_*.scss'],
-      //     dest: 'assets/css/source/',
-      //     ext: '.css'
-      //   }]
-      // }
+      }
     },
 
     cssmin: {
@@ -126,8 +117,8 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-postcss');
 
-grunt.registerTask( 'default', [ 'sass', 'postcss', 'concat' ] );
-grunt.registerTask( 'css', [ 'sass', 'postcss', 'cssmin' ] );
+grunt.registerTask( 'default', [ 'sass', 'postcss', 'concat:basic', 'cssmin' ] );
+grunt.registerTask( 'css', [ 'sass', 'postcss', 'concat:basic', 'cssmin' ] );
 grunt.registerTask( 'js', [ 'uglify'] );
 
 };
