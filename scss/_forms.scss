@@ -7,12 +7,14 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 
   &__inline {
-    @extend .form_field;
     display: inline-flex;
     vertical-align: top;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     &+& {
       margin-left: 1rem;
@@ -21,13 +23,14 @@
 
   &.checkbox,
   &.radio {
-    @extend .form_field;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 0;
 
     label {
-      @extend label;
       position: static;
-      order: 2;
+      order: 1;
       padding-left: $input-check-size / 2;
       line-height: $input-check-size;
     }
@@ -156,4 +159,21 @@ input[type='radio'] {
     @extend %custom_select;
   }
 }
+
+// Form field message error
+.form_field--error {
+  visibility: hidden;
+  flex-basis: 100%;
+  order: 2;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  color: $color-error;
+  font-size: 0.85rem;
+
+  .form_field.is-invalid & {
+    visibility: visible;
+  }
+}
+
+
 
