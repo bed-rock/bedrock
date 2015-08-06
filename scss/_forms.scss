@@ -28,14 +28,53 @@
     flex-wrap: wrap;
     margin-top: 0;
 
+    input[type='checkbox'],
+    input[type='radio'] {
+      display: none;
+
+      &:checked + label:before {
+        height: $input-check-size / 2;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: $input-check-checked-border-color;
+        border-left-color: $input-check-checked-border-color;
+        transform: rotate(-45deg) translateY(-1px);
+      }
+    }
+
+    input[type='radio'] {
+      &:checked + label:before {
+        border-radius: 0;
+      }
+    }
+
     label {
       position: static;
       order: 1;
-      padding-left: $input-check-size / 2;
       line-height: $input-check-size;
+
+      &:before {
+        content: '';
+        display: inline-flex;
+        margin: 0;
+        margin-right: 0.5rem;
+        width: $input-check-size;
+        height: $input-check-size;
+        vertical-align: top;
+        border-width: $input-check-border-width;
+        border-style: solid;
+        border-color: $input-check-border-color;
+        cursor: pointer;
+        transition: $form-field-transition;
+        transform: rotate(0deg);
+        transform-origin: 80% 30%;
+      }
     }
   }
 
+  &.radio label:before {
+    border-radius: 50%;
+  }
 }
 
 label {
@@ -118,22 +157,6 @@ select {
 }
 
 
-@import "extends/forms-extends";
-
-input[type='checkbox'] {
-  @extend %field_check;
-}
-
-input[type='radio'] {
-  @extend %field_check;
-  border-radius: 50%;
-
-  &:checked {
-    border-radius: 0;
-  }
-}
-
-
 /*
 ===========================
 #CustomSelect
@@ -162,7 +185,7 @@ input[type='radio'] {
 
 // Form field message error
 .form_field--error {
-  visibility: hidden;
+  display: none;
   flex-basis: 100%;
   order: 2;
   margin-top: 0.25rem;
@@ -171,9 +194,7 @@ input[type='radio'] {
   font-size: 0.85rem;
 
   .form_field.is-invalid & {
-    visibility: visible;
+    display: block;
   }
 }
-
-
 

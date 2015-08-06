@@ -92,13 +92,14 @@ p {
 }
 
 a {
-  color: $link-color;
-  text-decoration: none;
+  // color: $link-color;
+  color: inherit;
+  text-decoration: underline;
 
   &:hover,
   &:focus {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+    // color: $link-hover-color;
+    // text-decoration: $link-hover-decoration;
   }
 }
 
