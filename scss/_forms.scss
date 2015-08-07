@@ -50,7 +50,6 @@
 
     label {
       position: static;
-      order: 1;
       line-height: $input-check-size;
 
       &:before {
@@ -186,8 +185,7 @@ select {
 // Form field message error
 .form_field--error {
   display: none;
-  flex-basis: 100%;
-  order: 2;
+  width: 100%;
   margin-top: 0.25rem;
   margin-bottom: 0;
   color: $color-error;
