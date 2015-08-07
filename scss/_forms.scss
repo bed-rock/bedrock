@@ -4,12 +4,12 @@
 
 .form_field {
   position: relative;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.75rem 0;
   display: flex;
   flex-direction: column;
+  min-height: $input-height;
 
-  &__inline {
+  &.inline {
     display: inline-flex;
     vertical-align: top;
     align-items: center;
@@ -23,10 +23,8 @@
 
   &.checkbox,
   &.radio {
-    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 0;
 
     input[type='checkbox'],
     input[type='radio'] {
@@ -79,8 +77,6 @@
 
 label {
   position: absolute;
-  top: 0;
-  left: 0;
   line-height: $input-height;
   font-size: 1rem;
   color: $color-gray-light;
@@ -89,7 +85,7 @@ label {
   transition: $form-field-transition;
 
   &.active {
-    transform: translateY( - 1.5rem );
+    transform: translateY( - 1.75rem );
     font-size: 0.75rem;
     color: $color-primary;
   }

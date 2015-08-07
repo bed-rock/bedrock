@@ -32,7 +32,12 @@
 }
 
 // Icon
+.icon {
+  fill: currentColor;
+}
+
 .icon-caret {
+  display: inline-block;
   margin-left: 4px;
   border-top: 4px solid;
   border-right: 4px solid transparent;
