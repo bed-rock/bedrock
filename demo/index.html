@@ -23,7 +23,27 @@
 
   <section class="page">
 
-    <br-header show-search></br-header>
+    <br-header show-search>
+       <br-apps-navigation position="right" class="btn br-header"
+          options='[
+          {"id":"menu1", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"#"},
+          {"id":"2", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+          {"id":"3", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+          {"id":"4", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+          {"id":"5", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+          {"id":"6", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+          {"id":"7", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+          {"id":"8", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+          {"id":"9", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"}]'
+          icon="br-icons:apps">
+       </br-apps-navigation>
+       <br-dropdown-list icon="br-icons:user" position="right" class="btn br-header"
+          options='[
+          {"label": "Minha conta", "link":"/account"},
+          {"label": "Sair", "link":"/logout"}
+          ]'>
+        </br-dropdown-list>
+    </br-header>
 
     <br-nav items='[{ "label":"Gerencial", "link":"#", "group":"true"},
                     { "label":"Patrimônio", "link":"#", "icon":"br-icons:user",
