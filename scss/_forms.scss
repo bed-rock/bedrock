@@ -6,7 +6,8 @@
   position: relative;
   padding: 0.75rem 0;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  flex-wrap: wrap;
   min-height: $input-height;
 
   &.inline {
@@ -23,8 +24,8 @@
 
   &.checkbox,
   &.radio {
-    flex-direction: row;
-    flex-wrap: wrap;
+    // flex-direction: row;
+    // flex-wrap: wrap;
 
     input[type='checkbox'],
     input[type='radio'] {
@@ -72,6 +73,10 @@
   &.radio label:before {
     border-radius: 50%;
   }
+
+  .icon {
+    margin-right: 1rem;
+  }
 }
 
 label {
@@ -83,10 +88,20 @@ label {
   user-select: none;
   transition: $form-field-transition;
 
-  &.active {
-    transform: translateY( - 1.75rem );
-    font-size: 0.75rem;
+  .form_field.active & {
+    transform: translateY( - 0.85rem );
+    font-size: 0.85rem;
+    line-height: 1;
     color: $color-primary;
+  }
+
+  .form_field.is-invalid & {
+    color: $color-error;
+  }
+
+  .form_field[required] &:after {
+    content: ' *';
+    color: $color-error;
   }
 }
 
@@ -96,7 +111,8 @@ select,
 %custom_select {
   position: relative;
   display: block;
-  width: 100%;
+  // width: 100%;
+  flex-grow: 1;
   height: $input-height;
   line-height: $input-line-height;
   padding: 0;
@@ -128,7 +144,7 @@ select,
     cursor: $cursor-disabled;
   }
 
-  &.error {
+  .form_field.is-invalid & {
     box-shadow: 0 1px $input-border-color-error;
   }
 }
@@ -181,7 +197,7 @@ select {
 .form_field--error {
   display: none;
   width: 100%;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   margin-bottom: 0;
   color: $color-error;
   font-size: 0.85rem;
