@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="../dist/css/style.min.css">
   <link rel="import" href="../../br-header/src/br-header.html">
   <link rel="import" href="../../br-nav/src/br-nav.html">
+  <link rel="import" href="../../br-input/src/br-input.html">
+  <link rel="import" href="../../br-buttons/src/br-button.html">
+  <link rel="import" href="../../br-page-header/src/br-page-header.html">
 
   <style>
     .toggle_menu {
@@ -45,62 +48,26 @@
         </br-dropdown-list>
     </br-header>
 
-    <!-- <br-nav items='[{ "label":"Gerencial", "link":"#", "group":"true"},
-                    { "label":"Patrimônio", "link":"#", "icon":"br-icons:user",
-                      "submenu":[
-                        {"label":"Item 01.1", "link":"#"},
-                        {"label":"Item 01.2", "link":"#"},
-                        {"label":"Item 01.3", "link":"#"}
-                      ]},
-                    {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
-                    {"label":"NET", "link":"#", "icon":"br-icons:user",
-                    "submenu":[
-                        {"label":"Item 03.1", "link":"#"},
-                        {"label":"Item 03.2", "link":"#"},
-                        {"label":"Item 03.3", "link":"#"}
-                    ]},
-                    { "label":"Financeiro", "link":"#", "group":"true"},
-                    { "label":"Rebate", "link":"#", "icon":"br-icons:user",
-                      "submenu":[
-                        {"label":"Item 01.1", "link":"#"},
-                        {"label":"Item 01.2", "link":"#"},
-                        {"label":"Item 01.3", "link":"#"}
-                      ]},
-                    {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
-                    {"label":"Fundos", "link":"#", "icon":"br-icons:user",
-                    "submenu":[
-                        {"label":"Item 03.1", "link":"#"},
-                        {"label":"Item 03.2", "link":"#"},
-                        {"label":"Item 03.3", "link":"#"}
-                    ]}]'>
-      </br-nav> -->
-
     <main class="page-main">
-      <h1 class="page_title">Page title</h1>
+      <br-page-header text="Page title" icon="br-icons:globe"></br-page-header>
 
-      <div class="form_field">
-        <label for="teste">Teste</label>
-        <input type="text" id="teste">
-        <p class="form_field--error">Campo requerido</p>
+      <div class="row">
+        <div class="col-sm-6">
+          <br-input label="Nome"></br-input>
+        </div>
+        <div class="col-sm-6">
+          <br-input label="Sobrenome"></br-input>
+        </div>
+        <div class="col-sm-6">
+          <br-input label="E-mail"></br-input>
+        </div>
+        <div class="col-sm-6">
+          <br-input label="Endereço"></br-input>
+        </div>
       </div>
 
-      <div class="form_field checkbox">
-        <input type="checkbox" id="teste2">
-        <label for="teste2">Teste</label>
-        <p class="form_field--error">Campo requerido</p>
-      </div>
-
-      <div class="form_field radio inline">
-        <input type="radio" id="teste3" name="radios">
-        <label for="teste3">Sim</label>
-        <p class="form_field--error">Campo requerido</p>
-      </div>
-
-      <div class="form_field radio inline">
-        <input type="radio" id="teste4" name="radios">
-        <label for="teste4">Não</label>
-        <p class="form_field--error">Campo requerido</p>
-      </div>
+      <br-button label="Confirmar" class="primary" tabindex="0"></br-button>
+      <br-button label="Cancelar" tabindex="0"></br-button>
 
     </main>
 

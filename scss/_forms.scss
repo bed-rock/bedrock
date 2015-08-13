@@ -9,6 +9,7 @@
   // flex-direction: column;
   flex-wrap: wrap;
   min-height: $input-height;
+  margin-bottom: 0.5rem;
 
   &.inline {
     display: inline-flex;
@@ -26,6 +27,7 @@
   &.radio {
     // flex-direction: row;
     // flex-wrap: wrap;
+    margin-bottom: 0;
 
     input[type='checkbox'],
     input[type='radio'] {
@@ -103,8 +105,8 @@ label {
     color: $color-error;
   }
 
-  .form_field[required] &:after {
-    content: ' *';
+  .form_field[required] &:before {
+    content: '* ';
     color: $color-error;
   }
 }
