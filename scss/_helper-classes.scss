@@ -31,11 +31,7 @@
   font-weight: $font-bold;
 }
 
-// Icon
-.icon {
-  fill: currentColor;
-}
-
+// Custom Icons
 .icon-caret {
   display: inline-block;
   margin-left: 4px;
@@ -45,7 +41,7 @@
 }
 
 
-// Visible
+// Devices Visibility
 .visible-tablet {
   display: none !important;
   @media (min-width: $screen-phone) {

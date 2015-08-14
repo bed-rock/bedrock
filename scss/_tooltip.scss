@@ -1,0 +1,69 @@
+//
+// ==================================
+// #CSS-TOOLTIP
+// ==================================
+//
+// Example:
+// <a href="#" data-toggle="tooltip" data-title="I'm a CSS Tooltip!">Hover me</a>
+
+// Variables
+//
+$tooltip-background: rgba(#222, 1);
+$tooltip-arrow-size: 6px;
+
+// Styles
+//
+[data-toggle="tooltip"] {
+  position: relative;
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    bottom: 100%;
+    transition: all .2s ease-in-out;
+  }
+
+  &:before {
+    content: '';
+    z-index: 10;
+    left: 0%;
+    width: 0;
+    height: 0;
+    // margin-left: $tooltip-arrow-size / 2;
+    border-top: $tooltip-arrow-size solid $tooltip-background;
+    border-right: $tooltip-arrow-size solid transparent;
+    border-left: $tooltip-arrow-size solid transparent;
+    transform-origin: top left;
+  }
+
+  &:after {
+    content: attr(data-title);
+    z-index: 9;
+    left: 0%;
+    // margin-left: -($tooltip-arrow-size);
+    margin-bottom: $tooltip-arrow-size;
+    padding: 0.75em;
+    line-height: 1.25;
+    background: $tooltip-background;
+    color: rgba(#fff, 0.8);
+    font-size: 11px;
+    text-align: center;
+    border-radius: 2px 2px 2px 0;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 4px 8px;
+    transform-origin: bottom left;
+  }
+
+  &:hover:before,
+  &:focus:before,
+  &:hover:after,
+  &:focus:after {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
