@@ -91,7 +91,7 @@ module.exports = function (grunt) {
       basic: {
         files: {
           'dist/css/style.css': [
-            'vendor/normalize.css/normalize.css',
+            '../normalize.css/normalize.css',
             'dist/css/style.css'
           ],
         },
