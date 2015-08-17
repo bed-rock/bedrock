@@ -196,6 +196,7 @@ select {
 
   button {
     @extend %custom_select;
+    width: 100%;
   }
 }
 
