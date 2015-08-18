@@ -17,7 +17,7 @@
   <link rel="import" href="../../br-input/src/br-input.html">
   <link rel="import" href="../../br-buttons/src/br-button.html">
   <link rel="import" href="../../br-page-header/src/br-page-header.html">
-  <link rel="import" href="../../br-autocomplete/src/br-autocomplete.html">
+  <link rel="import" href="../../br-search/src/br-search.html">
 </head>
 <body>
 
@@ -65,14 +65,10 @@
     </div>
 
     <div class="group__center">
-      <br-autocomplete></br-autocomplete>
+      <br-search></br-search>
     </div>
 
     <div class="group__right">
-
-      <button class="btn__search" onclick="document.querySelector('br-autocomplete')._open(event);">
-        <br-icons icon="br-icons:search"></br-icons>
-      </button>
 
       <br-apps-navigation position="right" class="btn"
         options='[{"id":"menu1", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"#"},
