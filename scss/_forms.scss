@@ -117,7 +117,6 @@ select,
 %custom_select {
   position: relative;
   display: block;
-  // width: 100%;
   flex-grow: 1;
   height: $input-height;
   line-height: $input-line-height;
@@ -131,10 +130,6 @@ select,
   border: none;
   box-shadow: 0 1px $input-border-color;
   transition: $form-field-transition;
-
-  &:hover {
-    // box-shadow: 0 1px darken( $input-border-color, 10% );
-  }
 
   &:focus {
     outline: none;
@@ -187,18 +182,21 @@ select {
     content: '';
     position: absolute;
     top: $input-height / 2;
-    right: 1rem;
-    margin-top: -2px;
-    border-top: 4px solid;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    right: 0;
+    margin-top: 0;
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    transform: rotate(-45deg);
   }
 
   button {
     @extend %custom_select;
     width: 100%;
+    padding-right: 1.5rem;
   }
 }
+
 
 // Form field message error
 .form_field--error {
