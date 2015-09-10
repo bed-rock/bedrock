@@ -36,21 +36,6 @@ body {
   cursor: default;
 }
 
-button {
-  display: inline-flex;
-  align-items: center;
-  background: none;
-  border: none;
-  padding: 0;
-  text-align: left;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  position: relative;
-  vertical-align: middle;
-}
-
 :focus {
   outline: none;
 }
