@@ -1,0 +1,89 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 $button-padding-horizontal;
+  height: $button-height;
+  line-height: $button-height;
+  color: $button-color;
+  text-align: left;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  appearance: none;
+  vertical-align: middle;
+  background: $button-background;
+  border-radius: $button-border-radius;
+  transition: $button-transition;
+  transform: scale(1);
+  user-select: none;
+  box-shadow: $button-box-shadow;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:not(.btn-block) + &:not(.btn-block) {
+    margin-left: $button-margin;
+  }
+
+  &:hover:not([disabled]),
+  &:focus:not(:active):not([disabled]) {
+    background-color: $button-background-hover;
+  }
+
+  &:active:not([disabled]) {
+    background-color: $button-background;
+    transform: scale(0.95);
+  }
+
+  &[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &.btn-block {
+    width: 100%;
+    justify-content: center;
+  }
+
+  &.btn-primary {
+    color: $button-primary-color;
+    background-color: $button-primary-background;
+
+    &:hover:not([disabled]),
+    &:focus:not(:active):not([disabled]) {
+      background-color: $button-primary-background-hover;
+    }
+
+    &:active:not([disabled]) {
+      background-color: $button-primary-background;
+    }
+  }
+
+  &.btn-accent {
+    color: $button-accent-color;
+    background-color: $button-accent-background;
+
+    &:hover:not([disabled]),
+    &:focus:not(:active):not([disabled]) {
+      background-color: $button-accent-background-hover;
+    }
+
+    &:active:not([disabled]) {
+      background-color: $button-accent-background;
+    }
+  }
+
+  form & {
+    margin-top: 1rem;
+  }
+
+  .icon {
+    margin-right: 0.5em;
+  }
+
+}
+
+.btn-icon .icon {
+  margin-right: 0;
+}
