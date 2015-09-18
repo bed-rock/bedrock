@@ -61,10 +61,12 @@ $headings-line-height: 1.1;
 //
 $button-font-weight: 400;
 
+$button-border: 1px solid rgba(0, 0, 0, 0.0875);
+
 $button-color: #333;
-$button-background: #fff;
-$button-background-hover: darken($button-background,10%);
-$button-background-active: darken($button-background-hover,10%);
+$button-background: $color-white-2;
+$button-background-hover: darken($button-background,8%);
+$button-background-active: darken($button-background-hover,8%);
 // $button-border-color: $border-color-light;
 
 $button-primary-color: rgba(#fff, 0.95);
@@ -81,16 +83,20 @@ $button-link-disabled-color: $color-gray;
 
 $button-height: 3rem;
 $button-height-small: 2rem;
-$button-height-large: 3rem;
+$button-height-large: 4rem;
 
-$button-font-large: 1.2rem;
-$button-font-small: 0.8rem;
+$button-line-height: 1.15em;
+$button-line-height-small: 0.875em;
+$button-line-height-large: 1.125em;
+
+$button-font-size: 0.875rem;
+$button-font-size-small: 0.875rem;
+$button-font-size-large: 1.125rem;
 
 $button-padding-horizontal: 1em;
 $button-margin: 1rem;
 $button-border-radius: 3px;
 
-$button-box-shadow: inset 0 -3px 0 rgba(0,0,0,.05), inset 0 0 1px rgba(0,0,0,.5);
 
 $button-transition: all 0.4s;
 

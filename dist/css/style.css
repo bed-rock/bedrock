@@ -1362,7 +1362,9 @@ select option {
           align-items: center;
   padding: 0 1em;
   height: 3rem;
-  line-height: 3rem;
+  line-height: 1.15em;
+  font-family: inherit;
+  font-size: 0.875rem;
   color: #333;
   text-align: left;
   border: none;
@@ -1372,7 +1374,7 @@ select option {
      -moz-appearance: none;
           appearance: none;
   vertical-align: middle;
-  background: #fff;
+  background: transparent;
   border-radius: 3px;
   transition: all 0.4s;
   -webkit-transform: scale(1);
@@ -1381,21 +1383,18 @@ select option {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05), inset 0 0 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 .btn::-moz-focus-inner {
   border: 0;
 }
-.btn:not(.btn-block) + .btn:not(.btn-block) {
-  margin-left: 1rem;
-}
 .btn:hover:not([disabled]), .btn:focus:not(:active):not([disabled]) {
-  background-color: #e6e6e6;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px, rgba(0, 0, 0, 0.2) 0 4px 8px;
 }
 .btn:active:not([disabled]) {
-  background-color: #fff;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
 }
 .btn[disabled] {
   opacity: 0.7;
@@ -1406,6 +1405,16 @@ select option {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.btn.btn-default, .btn.btn-primary, .btn.btn-accent {
+  background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
+}
+.btn.btn-default:hover:not([disabled]), .btn.btn-primary:hover:not([disabled]), .btn.btn-accent:hover:not([disabled]), .btn.btn-default:focus:not(:active):not([disabled]), .btn.btn-primary:focus:not(:active):not([disabled]), .btn.btn-accent:focus:not(:active):not([disabled]) {
+  background-color: #e6e6e6;
+}
+.btn.btn-default:active:not([disabled]), .btn.btn-primary:active:not([disabled]), .btn.btn-accent:active:not([disabled]) {
+  background-color: #fafafa;
 }
 .btn.btn-primary {
   color: rgba(255, 255, 255, 0.95);
@@ -1427,11 +1436,22 @@ select option {
 .btn.btn-accent:active:not([disabled]) {
   background-color: #366261;
 }
+.btn.btn-small {
+  height: 2rem;
+  line-height: 0.875em;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+.btn.btn-large {
+  height: 4rem;
+  line-height: 1.125em;
+  font-size: 1.125rem;
+}
 form .btn {
   margin-top: 1rem;
 }
 .btn .icon {
-  margin-right: 0.5em;
+  margin-right: 0.75em;
 }
 
 .btn-icon .icon {
