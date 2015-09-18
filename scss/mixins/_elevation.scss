@@ -1,0 +1,7 @@
+@mixin elevation ( $elevation ) {
+  $elevation3: $elevation/2;
+  $elevation2: $elevation3/2;
+  $elevation1: $elevation2/2;
+
+  box-shadow: rgba(#000, 0.1) 0 $elevation1 $elevation2, rgba(#000, 0.2) 0 $elevation3 $elevation;
+}
