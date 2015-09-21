@@ -144,13 +144,37 @@ a {
   text-decoration: underline;
 }
 
+b, strong, dt, th {
+  font-weight: 500;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 ul, ol, dl {
   margin: 0;
   padding: 0;
-}
-
-dt, b, strong, th {
-  font-weight: 500;
 }
 
 .container {
@@ -803,6 +827,7 @@ dt, b, strong, th {
 
 label {
   position: absolute;
+  width: 100%;
   line-height: 2.5rem;
   font-size: 1rem;
   color: #999;
@@ -812,6 +837,9 @@ label {
       -ms-user-select: none;
           user-select: none;
   transition: all 0.2s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .form_field.active label {
   -webkit-transform: translateY(-0.85rem);
@@ -837,6 +865,7 @@ select,
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  width: 100%;
   height: 2.5rem;
   line-height: 2.5rem;
   padding: 0;
