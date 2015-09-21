@@ -42,6 +42,16 @@ body {
 }
 
 
+// Button
+//
+// Reset default font family and size
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+
 // Figures
 //
 // We reset this here because previously Normalize had no `figure` margins. This
