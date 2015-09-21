@@ -8,8 +8,8 @@
   flex-wrap: wrap;
   width: 100%;
   min-height: $input-height;
-  margin-bottom: 0.5rem;
-  padding: 0.75rem 0;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
 
   &.inline {
     display: inline-flex;
@@ -25,8 +25,6 @@
 
   &.checkbox,
   &.radio {
-    // flex-direction: row;
-    // flex-wrap: wrap;
     margin-bottom: 0;
 
     input[type='checkbox'],
@@ -87,12 +85,14 @@
 
 label {
   position: absolute;
+  width: 100%;
   line-height: $input-height;
   font-size: 1rem;
   color: $color-gray-light;
   cursor: pointer;
   user-select: none;
   transition: $form-field-transition;
+  @include text-overflow();
 
   .form_field.active & {
     transform: translateY( - 0.85rem );
@@ -113,16 +113,17 @@ label {
 
 input,
 textarea,
-select,
-%custom_select {
+select {
   position: relative;
   display: block;
   flex-grow: 1;
+  width: 100%;
   height: $input-height;
   line-height: $input-line-height;
   padding: 0;
   margin: 0;
   appearance: none;
+  font-family: inherit;
   font-size: $input-font-size;
   color: $input-color;
   text-indent: $input-text-indent;
@@ -145,7 +146,7 @@ select,
     cursor: $cursor-disabled;
   }
 
-  .form_field.is-invalid & {
+  .is-invalid & {
     box-shadow: 0 1px $input-border-color-error;
   }
 }
@@ -173,26 +174,11 @@ select {
 // #CustomSelect
 // ===========================
 //
-.custom_select {
-  position: relative;
-  display: inline-block;
-  width: 100%;
+.select {
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: $input-height / 2;
-    right: 0;
-    margin-top: 0;
-    border-top: 6px solid;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
-    transform: rotate(-45deg);
-  }
+  @include caret();
 
-  button {
-    @extend %custom_select;
-    width: 100%;
+  input {
     padding-right: 1.5rem;
   }
 }
