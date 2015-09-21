@@ -1,0 +1,14 @@
+$caret-size: 6px;
+
+@mixin caret ( $size: $caret-size ) {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-top: $size solid;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+    transform: rotate(-45deg);
+  }
+}
