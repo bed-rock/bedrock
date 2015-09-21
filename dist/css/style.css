@@ -30,6 +30,11 @@ body {
   outline: none;
 }
 
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 figure {
   margin: 0;
 }
@@ -872,6 +877,7 @@ select,
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  font-family: inherit;
   font-size: 1rem;
   color: #333;
   text-indent: 0;
@@ -923,11 +929,6 @@ select option {
   color: #666;
 }
 
-.custom_select {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
 .custom_select:after {
   content: '';
   position: absolute;
@@ -941,8 +942,8 @@ select option {
           transform: rotate(-45deg);
 }
 .custom_select button {
-  width: 100%;
   padding-right: 1.5rem;
+  text-align: left;
 }
 
 .form_field--error {

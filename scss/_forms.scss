@@ -123,6 +123,7 @@ select,
   padding: 0;
   margin: 0;
   appearance: none;
+  font-family: inherit;
   font-size: $input-font-size;
   color: $input-color;
   text-indent: $input-text-indent;
@@ -174,9 +175,6 @@ select {
 // ===========================
 //
 .custom_select {
-  position: relative;
-  display: inline-block;
-  width: 100%;
 
   &:after {
     content: '';
@@ -192,8 +190,8 @@ select {
 
   button {
     @extend %custom_select;
-    width: 100%;
     padding-right: 1.5rem;
+    text-align: left;
   }
 }
 
