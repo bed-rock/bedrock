@@ -85,12 +85,14 @@
 
 label {
   position: absolute;
+  width: 100%;
   line-height: $input-height;
   font-size: 1rem;
   color: $color-gray-light;
   cursor: pointer;
   user-select: none;
   transition: $form-field-transition;
+  @include text-overflow();
 
   .form_field.active & {
     transform: translateY( - 0.85rem );
@@ -116,6 +118,7 @@ select,
   position: relative;
   display: block;
   flex-grow: 1;
+  width: 100%;
   height: $input-height;
   line-height: $input-line-height;
   padding: 0;
