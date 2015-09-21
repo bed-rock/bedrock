@@ -8,7 +8,8 @@
   flex-wrap: wrap;
   width: 100%;
   min-height: $input-height;
-  margin: 0.75rem 0;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
 
   &.inline {
     display: inline-flex;
@@ -112,8 +113,7 @@ label {
 
 input,
 textarea,
-select,
-%custom_select {
+select {
   position: relative;
   display: block;
   flex-grow: 1;
@@ -146,7 +146,7 @@ select,
     cursor: $cursor-disabled;
   }
 
-  .form_field.is-invalid & {
+  .is-invalid & {
     box-shadow: 0 1px $input-border-color-error;
   }
 }
@@ -174,24 +174,12 @@ select {
 // #CustomSelect
 // ===========================
 //
-.custom_select {
+.select {
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: $input-height / 2;
-    right: 0;
-    margin-top: 0;
-    border-top: 6px solid;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
-    transform: rotate(-45deg);
-  }
+  @include caret();
 
-  button {
-    @extend %custom_select;
+  input {
     padding-right: 1.5rem;
-    text-align: left;
   }
 }
 

@@ -753,7 +753,8 @@ ul, ol, dl {
           flex-wrap: wrap;
   width: 100%;
   min-height: 2.5rem;
-  margin: 0.75rem 0;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
 }
 .form_field.inline {
   display: -webkit-inline-flex;
@@ -862,8 +863,7 @@ label {
 
 input,
 textarea,
-select,
-.custom_select button {
+select {
   position: relative;
   display: block;
   -webkit-flex-grow: 1;
@@ -888,8 +888,7 @@ select,
 }
 input:focus,
 textarea:focus,
-select:focus,
-.custom_select button:focus {
+select:focus {
   outline: none;
   box-shadow: 0 1px #334455;
 }
@@ -897,20 +896,17 @@ input[disabled], input[readonly],
 textarea[disabled],
 textarea[readonly],
 select[disabled],
-select[readonly],
-.custom_select button[disabled],
-.custom_select button[readonly] {
+select[readonly] {
   color: #999;
 }
 input[disabled],
 textarea[disabled],
-select[disabled],
-.custom_select button[disabled] {
+select[disabled] {
   cursor: not-allowed;
 }
-.form_field.is-invalid input, .form_field.is-invalid
-textarea, .form_field.is-invalid
-select, .form_field.is-invalid .custom_select button, .custom_select .form_field.is-invalid button {
+.is-invalid input, .is-invalid
+textarea, .is-invalid
+select {
   box-shadow: 0 1px #c0392b;
 }
 
@@ -929,21 +925,19 @@ select option {
   color: #666;
 }
 
-.custom_select:after {
+.select:after {
   content: '';
   position: absolute;
-  top: 1.25rem;
+  top: 50%;
   right: 0;
-  margin-top: 0;
   border-top: 6px solid;
   border-right: 6px solid transparent;
   border-left: 6px solid transparent;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.custom_select button {
+.select input {
   padding-right: 1.5rem;
-  text-align: left;
 }
 
 .form_field--error {
