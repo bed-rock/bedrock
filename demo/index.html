@@ -10,97 +10,62 @@
   <link rel="import" type="html" href="../../polymer/polymer.html">
   <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
 
-  <link rel="import" href="../../br-header/src/br-header.html">
-  <link rel="import" href="../../br-icons/src/br-icons.html">
-  <link rel="import" href="../../br-nav/src/br-nav.html">
-  <link rel="import" href="../../br-apps-navigation/src/br-apps-navigation.html">
-  <link rel="import" href="../../br-dropdown-list/src/br-dropdown-list.html">
-  <link rel="import" href="../../br-input/src/br-input.html">
-  <link rel="import" href="../../br-buttons/src/br-button.html">
-  <link rel="import" href="../../br-page-header/src/br-page-header.html">
-  <link rel="import" href="../../br-search/src/br-search.html">
+  <link rel="import" href="../../br-page/src/br-page.html">
 </head>
 <body>
 
   <section class="page">
 
-    <br-header>
+    <br-page
 
-    <div class="group__left">
+    nav-options='[{ "label":"Gerencial", "link":"#", "group":"true"},
+    { "label":"Patrimônio", "link":"#", "icon":"br-icons:user",
+    "submenu":[
+    {"label":"Item 01.1", "link":"#"},
+    {"label":"Item 01.2", "link":"#"},
+    {"label":"Item 01.3", "link":"#"}
+    ]},
+    {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
+    {"label":"NET", "link":"#", "icon":"br-icons:user",
+    "submenu":[
+    {"label":"Item 03.1", "link":"#"},
+    {"label":"Item 03.2", "link":"#"},
+    {"label":"Item 03.3", "link":"#"}
+    ]},
+    { "label":"Financeiro", "link":"#", "group":"true"},
+    { "label":"Rebate", "link":"#", "icon":"br-icons:user",
+    "submenu":[
+    {"label":"Item 01.1", "link":"#"},
+    {"label":"Item 01.2", "link":"#"},
+    {"label":"Item 01.3", "link":"#"}
+    ]},
+    {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
+    {"label":"Fundos", "link":"#", "icon":"br-icons:user",
+    "submenu":[
+    {"label":"Item 03.1", "link":"#"},
+    {"label":"Item 03.2", "link":"#"},
+    {"label":"Item 03.3", "link":"#"}
+    ]}]'
 
-      <br-nav class="btn"
-        items='[{ "label":"Gerencial", "link":"#", "group":"true"},
-        { "label":"Patrimônio", "link":"#", "icon":"br-icons:user",
-        "submenu":[
-        {"label":"Item 01.1", "link":"#"},
-        {"label":"Item 01.2", "link":"#"},
-        {"label":"Item 01.3", "link":"#"}
-        ]},
-        {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
-        {"label":"NET", "link":"#", "icon":"br-icons:user",
-        "submenu":[
-        {"label":"Item 03.1", "link":"#"},
-        {"label":"Item 03.2", "link":"#"},
-        {"label":"Item 03.3", "link":"#"}
-        ]},
-        { "label":"Financeiro", "link":"#", "group":"true"},
-        { "label":"Rebate", "link":"#", "icon":"br-icons:user",
-        "submenu":[
-        {"label":"Item 01.1", "link":"#"},
-        {"label":"Item 01.2", "link":"#"},
-        {"label":"Item 01.3", "link":"#"}
-        ]},
-        {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
-        {"label":"Fundos", "link":"#", "icon":"br-icons:user",
-        "submenu":[
-        {"label":"Item 03.1", "link":"#"},
-        {"label":"Item 03.2", "link":"#"},
-        {"label":"Item 03.3", "link":"#"}
-        ]}]'>
-      </br-nav>
+    apps= '[{"id":"menu1", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"#"},
+    {"id":"2", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+    {"id":"3", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+    {"id":"4", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+    {"id":"5", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+    {"id":"6", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+    {"id":"7", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+    {"id":"8", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+    {"id":"9", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"}]'
 
-      <a href="/" class="logo">
-        <img src="http://azpanelh.azurewebsites.net/Assets/img/logo_azimutit.png" alt="Logo">
-      </a>
+    account-options='[{"label": "Minha conta", "link":"/account"}, {"label": "Sair", "link":"/logout"}]'>
 
-    </div>
-
-    <div class="group__center">
-      <br-search></br-search>
-    </div>
-
-    <div class="group__right">
-
-      <br-apps-navigation position="right" class="btn"
-        options='[{"id":"menu1", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"#"},
-        {"id":"2", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-        {"id":"3", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
-        {"id":"4", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-        {"id":"5", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
-        {"id":"6", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-        {"id":"7", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
-        {"id":"8", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-        {"id":"9", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"}]'
-        icon="br-icons:apps">
-      </br-apps-navigation>
-
-      <br-dropdown-list icon="br-icons:user" position="right" class="btn"
-        options='[{"label": "Minha conta", "link":"/account"}, {"label": "Sair", "link":"/logout"}]'>
-      </br-dropdown-list>
-
-    </div>
-
-  </br-header>
-
-
-  <main class="page-main">
     <br-page-header text="Page title" icon="br-icons:globe" tooltip="Mensagem do tooltip"></br-page-header>
 
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-xs-6">
         <br-input label="Nome"></br-input>
       </div>
-      <div class="col-sm-6">
+      <div class="col-xs-6">
         <br-input label="Sobrenome"></br-input>
       </div>
       <div class="col-sm-6">
@@ -114,7 +79,7 @@
     <br-button label="Confirmar" class="primary" tabindex="0"></br-button>
     <br-button label="Cancelar" tabindex="0"></br-button>
 
-  </main>
+  </br-page>
 
 </section>
 
