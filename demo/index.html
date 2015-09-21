@@ -14,80 +14,76 @@
 </head>
 <body>
 
-  <section class="page">
+  <br-page
 
-    <br-page
+  nav-options='[{ "label":"Gerencial", "link":"#", "group":"true"},
+  { "label":"Patrimônio", "link":"#", "icon":"br-icons:user",
+  "submenu":[
+  {"label":"Item 01.1", "link":"#"},
+  {"label":"Item 01.2", "link":"#"},
+  {"label":"Item 01.3", "link":"#"}
+  ]},
+  {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
+  {"label":"NET", "link":"#", "icon":"br-icons:user",
+  "submenu":[
+  {"label":"Item 03.1", "link":"#"},
+  {"label":"Item 03.2", "link":"#"},
+  {"label":"Item 03.3", "link":"#"}
+  ]},
+  { "label":"Financeiro", "link":"#", "group":"true"},
+  { "label":"Rebate", "link":"#", "icon":"br-icons:user",
+  "submenu":[
+  {"label":"Item 01.1", "link":"#"},
+  {"label":"Item 01.2", "link":"#"},
+  {"label":"Item 01.3", "link":"#"}
+  ]},
+  {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
+  {"label":"Fundos", "link":"#", "icon":"br-icons:user",
+  "submenu":[
+  {"label":"Item 03.1", "link":"#"},
+  {"label":"Item 03.2", "link":"#"},
+  {"label":"Item 03.3", "link":"#"}
+  ]}]'
 
-    nav-options='[{ "label":"Gerencial", "link":"#", "group":"true"},
-    { "label":"Patrimônio", "link":"#", "icon":"br-icons:user",
-    "submenu":[
-    {"label":"Item 01.1", "link":"#"},
-    {"label":"Item 01.2", "link":"#"},
-    {"label":"Item 01.3", "link":"#"}
-    ]},
-    {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
-    {"label":"NET", "link":"#", "icon":"br-icons:user",
-    "submenu":[
-    {"label":"Item 03.1", "link":"#"},
-    {"label":"Item 03.2", "link":"#"},
-    {"label":"Item 03.3", "link":"#"}
-    ]},
-    { "label":"Financeiro", "link":"#", "group":"true"},
-    { "label":"Rebate", "link":"#", "icon":"br-icons:user",
-    "submenu":[
-    {"label":"Item 01.1", "link":"#"},
-    {"label":"Item 01.2", "link":"#"},
-    {"label":"Item 01.3", "link":"#"}
-    ]},
-    {"label":"Clientes", "link":"#", "icon":"br-icons:user"},
-    {"label":"Fundos", "link":"#", "icon":"br-icons:user",
-    "submenu":[
-    {"label":"Item 03.1", "link":"#"},
-    {"label":"Item 03.2", "link":"#"},
-    {"label":"Item 03.3", "link":"#"}
-    ]}]'
+  apps= '[{"id":"menu1", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"#"},
+  {"id":"2", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+  {"id":"3", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+  {"id":"4", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+  {"id":"5", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+  {"id":"6", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+  {"id":"7", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
+  {"id":"8", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
+  {"id":"9", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"}]'
 
-    apps= '[{"id":"menu1", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"#"},
-    {"id":"2", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-    {"id":"3", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
-    {"id":"4", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-    {"id":"5", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
-    {"id":"6", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-    {"id":"7", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"},
-    {"id":"8", "text": "Suporte", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-suporte.png", "link":"https://everestti.freshdesk.com"},
-    {"id":"9", "text": "Outlook", "img":"http://azfundsh.azurewebsites.net/Assets/img/logo-outlook.png", "link":"https://outlook.office365.com"}]'
+  account-options='[{"label": "Minha conta", "link":"/account"}, {"label": "Sair", "link":"/logout"}]'>
 
-    account-options='[{"label": "Minha conta", "link":"/account"}, {"label": "Sair", "link":"/logout"}]'>
+  <br-page-header text="Page title" icon="br-icons:globe" tooltip="Mensagem do tooltip"></br-page-header>
 
-    <br-page-header text="Page title" icon="br-icons:globe" tooltip="Mensagem do tooltip"></br-page-header>
-
-    <div class="row">
-      <div class="col-xs-6">
-        <br-input label="Nome"></br-input>
-      </div>
-      <div class="col-xs-6">
-        <br-input label="Sobrenome"></br-input>
-      </div>
-      <div class="col-xs-6">
-        <br-select label="Selecione"></br-select>
-      </div>
-      <div class="col-xs-6">
-        <br-select label="Selecione"></br-select>
-      </div>
-      <div class="col-sm-6">
-        <br-input label="E-mail"></br-input>
-      </div>
-      <div class="col-sm-6">
-        <br-input label="Endereço"></br-input>
-      </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <br-input label="Nome"></br-input>
     </div>
+    <div class="col-xs-6">
+      <br-input label="Sobrenome"></br-input>
+    </div>
+    <div class="col-xs-6">
+      <br-select label="Assessores" options='[{"key": 1, "value": "Judith"}, {"key": 2, "value": "Marie"}, {"key": 3, "value": "Joseph"}, {"key": 4, "value": "John"}]'></br-select>
+    </div>
+    <div class="col-xs-6">
+      <br-select label="Selecione"></br-select>
+    </div>
+    <div class="col-sm-6">
+      <br-input label="E-mail"></br-input>
+    </div>
+    <div class="col-sm-6">
+      <br-input label="Endereço"></br-input>
+    </div>
+  </div>
 
-    <br-button label="Confirmar" class="primary" tabindex="0"></br-button>
-    <br-button label="Cancelar" tabindex="0"></br-button>
+  <br-button label="Confirmar" class="primary" tabindex="0"></br-button>
+  <br-button label="Cancelar" tabindex="0"></br-button>
 
-  </br-page>
-
-</section>
+</br-page>
 
 </body>
 </html>
