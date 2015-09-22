@@ -21,6 +21,7 @@
   &.checkbox,
   &.radio {
     margin-bottom: 0;
+    align-items: baseline;
 
     input[type='checkbox'],
     input[type='radio'] {
@@ -44,23 +45,29 @@
 
     label {
       position: static;
-      line-height: $input-check-size;
+      padding-left: 1.5rem;
+      line-height: $line-height;
+      white-space: normal;
+      width: auto;
+      overflow: visible;
 
       &:before {
+        position: absolute;
+        top: 2px;
+        left: 0;
         content: '';
-        display: inline-flex;
+        display: block;
         margin: 0;
         margin-right: 0.5rem;
         width: $input-check-size;
         height: $input-check-size;
-        vertical-align: top;
         border-width: $input-check-border-width;
         border-style: solid;
         border-color: $input-check-border-color;
         cursor: pointer;
         transition: $form-field-transition;
         transform: rotate(0deg);
-        transform-origin: 80% 30%;
+        transform-origin: 60% 30%;
       }
     }
   }
@@ -76,6 +83,7 @@
       left: 40px;
     }
   }
+
 }
 
 label {
