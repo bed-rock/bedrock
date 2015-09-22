@@ -12,26 +12,22 @@
   margin-bottom: 1.5rem;
 
   &.inline {
+    width: auto;
     display: inline-flex;
     vertical-align: top;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    &+& {
-      margin-left: 1rem;
-    }
+    margin-right: 1rem;
   }
 
   &.checkbox,
   &.radio {
     margin-bottom: 0;
+    align-items: baseline;
 
     input[type='checkbox'],
     input[type='radio'] {
       display: none;
 
-      &:checked + label:before {
+      &:checked ~ label:before {
         height: $input-check-size / 2;
         border-top-color: transparent;
         border-right-color: transparent;
@@ -42,30 +38,36 @@
     }
 
     input[type='radio'] {
-      &:checked + label:before {
+      &:checked ~ label:before {
         border-radius: 0;
       }
     }
 
     label {
       position: static;
-      line-height: $input-check-size;
+      padding-left: 1.5rem;
+      line-height: $line-height;
+      white-space: normal;
+      width: auto;
+      overflow: visible;
 
       &:before {
+        position: absolute;
+        top: 2px;
+        left: 0;
         content: '';
-        display: inline-flex;
+        display: block;
         margin: 0;
         margin-right: 0.5rem;
         width: $input-check-size;
         height: $input-check-size;
-        vertical-align: top;
         border-width: $input-check-border-width;
         border-style: solid;
         border-color: $input-check-border-color;
         cursor: pointer;
         transition: $form-field-transition;
         transform: rotate(0deg);
-        transform-origin: 80% 30%;
+        transform-origin: 60% 30%;
       }
     }
   }
@@ -81,6 +83,7 @@
       left: 40px;
     }
   }
+
 }
 
 label {

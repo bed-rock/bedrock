@@ -758,34 +758,27 @@ ul, ol, dl {
   margin-bottom: 1.5rem;
 }
 .form_field.inline {
+  width: auto;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: top;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-}
-.form_field.inline + .form_field.inline {
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .form_field.checkbox, .form_field.radio {
   margin-bottom: 0;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 .form_field.checkbox input[type='checkbox'],
 .form_field.checkbox input[type='radio'], .form_field.radio input[type='checkbox'],
 .form_field.radio input[type='radio'] {
   display: none;
 }
-.form_field.checkbox input[type='checkbox']:checked + label:before,
-.form_field.checkbox input[type='radio']:checked + label:before, .form_field.radio input[type='checkbox']:checked + label:before,
-.form_field.radio input[type='radio']:checked + label:before {
+.form_field.checkbox input[type='checkbox']:checked ~ label:before,
+.form_field.checkbox input[type='radio']:checked ~ label:before, .form_field.radio input[type='checkbox']:checked ~ label:before,
+.form_field.radio input[type='radio']:checked ~ label:before {
   height: 8px;
   border-top-color: transparent;
   border-right-color: transparent;
@@ -794,23 +787,27 @@ ul, ol, dl {
   -webkit-transform: rotate(-45deg) translateY(-1px);
           transform: rotate(-45deg) translateY(-1px);
 }
-.form_field.checkbox input[type='radio']:checked + label:before, .form_field.radio input[type='radio']:checked + label:before {
+.form_field.checkbox input[type='radio']:checked ~ label:before, .form_field.radio input[type='radio']:checked ~ label:before {
   border-radius: 0;
 }
 .form_field.checkbox label, .form_field.radio label {
   position: static;
-  line-height: 16px;
+  padding-left: 1.5rem;
+  line-height: 1.25;
+  white-space: normal;
+  width: auto;
+  overflow: visible;
 }
 .form_field.checkbox label:before, .form_field.radio label:before {
+  position: absolute;
+  top: 2px;
+  left: 0;
   content: '';
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: block;
   margin: 0;
   margin-right: 0.5rem;
   width: 16px;
   height: 16px;
-  vertical-align: top;
   border-width: 2px;
   border-style: solid;
   border-color: #999;
@@ -818,8 +815,8 @@ ul, ol, dl {
   transition: all 0.2s;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  -webkit-transform-origin: 80% 30%;
-          transform-origin: 80% 30%;
+  -webkit-transform-origin: 60% 30%;
+          transform-origin: 60% 30%;
 }
 .form_field.radio label:before {
   border-radius: 50%;
