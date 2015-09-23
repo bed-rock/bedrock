@@ -862,8 +862,8 @@ label {
 .form_field.is-invalid label {
   color: #c0392b;
 }
-.form_field[required] label:after {
-  content: ' * ';
+.form_field[required] label:before {
+  content: '* ';
 }
 
 input,
