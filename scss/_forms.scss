@@ -78,9 +78,15 @@
 
   .icon {
     margin-right: 1rem;
+    flex-grow: 0;
+    flex-shrink: 0;
 
     & ~ label {
       left: 40px;
+    }
+
+    & ~ .form_field--error {
+      margin-left: 40px;
     }
   }
 
@@ -101,16 +107,14 @@ label {
     transform: translateY( - 0.85rem );
     font-size: 0.85rem;
     line-height: 1;
-    color: $color-primary;
   }
 
   .form_field.is-invalid & {
     color: $color-error;
   }
 
-  .form_field[required] &:before {
-    content: '* ';
-    color: $color-error;
+  .form_field[required] &:after {
+    content: ' * ';
   }
 }
 
@@ -120,7 +124,7 @@ select {
   position: relative;
   display: block;
   flex-grow: 1;
-  width: 100%;
+  max-width: 100%;
   height: $input-height;
   line-height: $input-line-height;
   padding: 0;
