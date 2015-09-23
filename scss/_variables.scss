@@ -97,27 +97,21 @@ $button-padding-horizontal: 1em;
 $button-margin: 1rem;
 $button-border-radius: 3px;
 
-
 $button-transition: all 0.4s;
 
 
 // Tables
-//** Padding for `<th>`s and `<td>`s.
 //
-$table-cell-padding: 8px;
-//** Padding for cells in `.table-condensed`.
-$table-condensed-cell-padding: 5px;
-
-//** Default background color used for all tables.
-$table-bg: transparent;
-//** Background color used for `.table-striped`.
-$table-bg-accent: $color-white-2;
-//** Background color used for `.table-hover`.
-$table-bg-hover: $color-white-4;
-$table-bg-active: $table-bg-hover;
-
-//** Border color for table and cell borders.
-$table-border-color: #ddd;
+$table-font-size: 0.875rem;
+$table-header-font-size: 1rem;
+$table-header-color: $color-gray;
+$table-row-height: 3rem;
+$table-column-padding: 18px;
+$table-cell-top: 12px;
+$table-accent-color: $color-white-2;
+$table-hover-color: $color-white-4;
+$table-selection-color: $color-white-4;
+$table-dividers: 1px solid rgba(0,0,0,.1);
 
 
 // Form controls
