@@ -80,6 +80,61 @@
     </div>
   </div>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Banco</th>
+        <th>Agencia</th>
+        <th>Conta</th>
+        <th>Digito</th>
+        <th>Tipo</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="financeData in vm.financialData.accountItems" id="financeData1" class="ng-scope">
+        <td class="ng-binding"></td>
+        <td class="ng-binding">654</td>
+        <td class="ng-binding">345</td>
+        <td class="ng-binding">1</td>
+        <td class="ng-binding"></td>
+        <td><a href="#" ng-click="vm.deleteItem($index)">X</a></td>
+      </tr>
+      <tr ng-repeat="financeData in vm.financialData.accountItems" id="financeData2" class="ng-scope">
+        <td class="ng-binding"></td>
+        <td class="ng-binding">654</td>
+        <td class="ng-binding">345</td>
+        <td class="ng-binding">1</td>
+        <td class="ng-binding"></td>
+        <td><a href="#" ng-click="vm.deleteItem($index)">X</a></td>
+      </tr>
+      <tr ng-repeat="financeData in vm.financialData.accountItems" id="financeData3" class="ng-scope">
+        <td class="ng-binding"></td>
+        <td class="ng-binding">654</td>
+        <td class="ng-binding">345</td>
+        <td class="ng-binding">1</td>
+        <td class="ng-binding"></td>
+        <td><a href="#" ng-click="vm.deleteItem($index)">X</a></td>
+      </tr>
+      <tr ng-repeat="financeData in vm.financialData.accountItems" id="financeData4" class="ng-scope">
+        <td class="ng-binding"></td>
+        <td class="ng-binding">654</td>
+        <td class="ng-binding">345</td>
+        <td class="ng-binding">1</td>
+        <td class="ng-binding"></td>
+        <td><a href="#" ng-click="vm.deleteItem($index)">X</a></td>
+      </tr>
+      <tr ng-repeat="financeData in vm.financialData.accountItems" id="financeData5" class="ng-scope">
+        <td class="ng-binding"></td>
+        <td class="ng-binding">654</td>
+        <td class="ng-binding">345</td>
+        <td class="ng-binding">1</td>
+        <td class="ng-binding"></td>
+        <td><a href="#" ng-click="vm.deleteItem($index)">X</a></td>
+      </tr>
+    </tbody>
+  </table>
+
   <br-button label="Confirmar" class="primary" tabindex="0"></br-button>
   <br-button label="Cancelar" tabindex="0"></br-button>
 
