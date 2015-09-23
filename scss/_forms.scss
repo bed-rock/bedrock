@@ -113,8 +113,8 @@ label {
     color: $color-error;
   }
 
-  .form_field[required] &:after {
-    content: ' * ';
+  .form_field[required] &:before {
+    content: '* ';
   }
 }
 
