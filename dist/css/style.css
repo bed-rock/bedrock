@@ -126,15 +126,15 @@ h1 small {
 }
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 1em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 2.5rem;
   line-height: 1.1;
   font-weight: 100;
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 2rem;
   line-height: 1.1;
@@ -142,16 +142,13 @@ h2 {
 }
 
 p {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 a {
   color: inherit;
   text-decoration: underline;
-}
-
-b, strong, dt, th {
-  font-weight: 500;
 }
 
 .text-left {
@@ -166,16 +163,44 @@ b, strong, dt, th {
   text-align: center;
 }
 
-.text-lowercase {
+.text_lowercase {
   text-transform: lowercase;
 }
 
-.text-uppercase {
+.text_uppercase {
   text-transform: uppercase;
 }
 
-.text-capitalize {
+.text_capitalize {
   text-transform: capitalize;
+}
+
+.font_bold, b, strong, dt, th {
+  font-weight: 500;
+}
+
+.caption {
+  font-size: 0.875;
+}
+
+.text_success {
+  color: #7cb342;
+}
+
+.text_info {
+  color: #3498db;
+}
+
+.text_warning {
+  color: #ed9c20;
+}
+
+.text_error {
+  color: #c0392b;
+}
+
+.text_muted {
+  color: #666;
 }
 
 ul, ol, dl {
@@ -1200,38 +1225,6 @@ form .btn {
   border-radius: 1em 1em 0 1em;
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
-}
-
-.text_success {
-  color: #7cb342;
-}
-
-.text_info {
-  color: #3498db;
-}
-
-.text_warning {
-  color: #ed9c20;
-}
-
-.text_error {
-  color: #c0392b;
-}
-
-.text_lowercase {
-  text-transform: lowercase;
-}
-
-.text_uppercase {
-  text-transform: uppercase;
-}
-
-.text_capitalize {
-  text-transform: capitalize;
-}
-
-.font_bold {
-  font-weight: 500;
 }
 
 .icon-caret {
