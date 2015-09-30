@@ -54,22 +54,38 @@ h1 small {
 }
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 1em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: $font-size-h1;
   line-height: $headings-line-height;
   font-weight: $font-weight-h1;
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: $font-size-h2;
   line-height: $headings-line-height;
   font-weight: $font-weight-h2;
 }
 
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: $font-size-h3;
+  line-height: $headings-line-height;
+  font-weight: $font-weight-h3;
+}
+
+.section_title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 p {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -77,6 +93,7 @@ a {
   // color: $link-color;
   color: inherit;
   text-decoration: underline;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -86,18 +103,63 @@ a {
 }
 
 b, strong, dt, th {
-  font-weight: $font-bold;
+  @extend .font_bold;
 }
 
 // Alignment
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
+.text_left {
+  text-align: left;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.text_center {
+  text-align: center;
+}
 
 // Transformation
-.text-lowercase      { text-transform: lowercase; }
-.text-uppercase      { text-transform: uppercase; }
-.text-capitalize     { text-transform: capitalize; }
+.text_lowercase {
+  text-transform: lowercase;
+}
+
+.text_uppercase {
+  text-transform: uppercase;
+}
+
+.text_capitalize {
+  text-transform: capitalize;
+}
+
+.text_caption {
+  font-size: 0.875rem;
+}
+
+.font_bold {
+  font-weight: $font-bold;
+}
+
+// Contextual colors
+.text_success {
+  color: $color-success;
+}
+
+.text_info {
+  color: $color-information;
+}
+
+.text_warning {
+  color: $color-warning;
+}
+
+.text_error {
+  color: $color-error;
+}
+
+.text_muted {
+  color: $color-gray;
+}
 
 // Lists
 ul, ol, dl {

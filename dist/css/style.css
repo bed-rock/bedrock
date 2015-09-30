@@ -31,9 +31,11 @@ body {
   outline: none;
 }
 
+input[type="button"],
 button {
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
 }
 
 figure {
@@ -126,56 +128,97 @@ h1 small {
 }
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 1em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 2.5rem;
   line-height: 1.1;
   font-weight: 100;
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 2rem;
   line-height: 1.1;
   font-weight: 300;
 }
 
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.section_title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 p {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: pointer;
 }
 
-b, strong, dt, th {
-  font-weight: 500;
-}
-
-.text-left {
+.text_left {
   text-align: left;
 }
 
-.text-right {
+.text_right {
   text-align: right;
 }
 
-.text-center {
+.text_center {
   text-align: center;
 }
 
-.text-lowercase {
+.text_lowercase {
   text-transform: lowercase;
 }
 
-.text-uppercase {
+.text_uppercase {
   text-transform: uppercase;
 }
 
-.text-capitalize {
+.text_capitalize {
   text-transform: capitalize;
+}
+
+.text_caption {
+  font-size: 0.875rem;
+}
+
+.font_bold, b, strong, dt, th {
+  font-weight: 500;
+}
+
+.text_success {
+  color: #7cb342;
+}
+
+.text_info {
+  color: #3498db;
+}
+
+.text_warning {
+  color: #ed9c20;
+}
+
+.text_error {
+  color: #c0392b;
+}
+
+.text_muted {
+  color: #666;
 }
 
 ul, ol, dl {
@@ -983,7 +1026,6 @@ select option {
 }
 .table td, .table th {
   padding: 0 18px 0 18px;
-  text-align: right;
 }
 .table td:first-of-type, .table th:first-of-type {
   padding-left: 2rem;
@@ -1007,9 +1049,10 @@ select option {
   text-overflow: ellipsis;
   white-space: nowrap;
   height: 3rem;
+  padding-bottom: 8px;
   font-size: 1rem;
   color: #666;
-  padding-bottom: 8px;
+  text-align: left;
   box-sizing: border-box;
 }
 
@@ -1111,9 +1154,6 @@ select option {
   line-height: 1.125em;
   font-size: 1.125rem;
 }
-form .btn {
-  margin-top: 1rem;
-}
 .btn .icon {
   margin-right: 0.75em;
 }
@@ -1200,38 +1240,6 @@ form .btn {
   border-radius: 1em 1em 0 1em;
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
-}
-
-.text_success {
-  color: #7cb342;
-}
-
-.text_info {
-  color: #3498db;
-}
-
-.text_warning {
-  color: #ed9c20;
-}
-
-.text_error {
-  color: #c0392b;
-}
-
-.text_lowercase {
-  text-transform: lowercase;
-}
-
-.text_uppercase {
-  text-transform: uppercase;
-}
-
-.text_capitalize {
-  text-transform: capitalize;
-}
-
-.font_bold {
-  font-weight: 500;
 }
 
 .icon-caret {

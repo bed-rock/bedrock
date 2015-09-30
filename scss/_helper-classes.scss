@@ -1,36 +1,3 @@
-// Typography
-.text_success {
-  color: $color-success;
-}
-
-.text_info {
-  color: $color-information;
-}
-
-.text_warning {
-  color: $color-warning;
-}
-
-.text_error {
-  color: $color-error;
-}
-
-.text_lowercase {
-  text-transform: lowercase;
-}
-
-.text_uppercase {
-  text-transform: uppercase;
-}
-
-.text_capitalize {
-  text-transform: capitalize;
-}
-
-.font_bold {
-  font-weight: $font-bold;
-}
-
 // Custom Icons
 .icon-caret {
   display: inline-block;
