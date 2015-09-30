@@ -69,6 +69,21 @@ h2 {
   font-weight: $font-weight-h2;
 }
 
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: $font-size-h3;
+  line-height: $headings-line-height;
+  font-weight: $font-weight-h3;
+}
+
+.section_title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 p {
   margin-top: 1rem;
   margin-bottom: 1rem;
