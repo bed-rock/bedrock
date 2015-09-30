@@ -151,15 +151,15 @@ a {
   text-decoration: underline;
 }
 
-.text-left {
+.text_left {
   text-align: left;
 }
 
-.text-right {
+.text_right {
   text-align: right;
 }
 
-.text-center {
+.text_center {
   text-align: center;
 }
 
@@ -175,12 +175,12 @@ a {
   text-transform: capitalize;
 }
 
-.font_bold, b, strong, dt, th {
-  font-weight: 500;
+.text_caption {
+  font-size: 0.875rem;
 }
 
-.caption {
-  font-size: 0.875;
+.font_bold, b, strong, dt, th {
+  font-weight: 500;
 }
 
 .text_success {

@@ -91,15 +91,15 @@ b, strong, dt, th {
 }
 
 // Alignment
-.text-left {
+.text_left {
   text-align: left;
 }
 
-.text-right {
+.text_right {
   text-align: right;
 }
 
-.text-center {
+.text_center {
   text-align: center;
 }
 
@@ -116,12 +116,12 @@ b, strong, dt, th {
   text-transform: capitalize;
 }
 
-.font_bold {
-  font-weight: $font-bold;
+.text_caption {
+  font-size: 0.875rem;
 }
 
-.caption {
-  font-size: 0.875rem;
+.font_bold {
+  font-weight: $font-bold;
 }
 
 // Contextual colors
