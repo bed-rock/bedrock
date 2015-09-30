@@ -31,9 +31,11 @@ body {
   outline: none;
 }
 
+input[type="button"],
 button {
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
 }
 
 figure {
@@ -164,6 +166,7 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .text_left {

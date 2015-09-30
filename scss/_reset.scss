@@ -47,9 +47,11 @@ body {
 //
 // Reset default font family and size
 
+input[type="button"],
 button {
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
 }
 
 
