@@ -834,7 +834,7 @@ ul, ol, dl {
 }
 .form_field.checkbox label, .form_field.radio label {
   position: static;
-  padding-left: 1.5rem;
+  padding: 0 0 0 1.5rem;
   line-height: 1.25;
   white-space: normal;
   width: auto;
