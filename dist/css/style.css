@@ -82,6 +82,12 @@ hr {
     padding-right: 2rem;
   }
 }
+@media (min-width: 1600px) {
+  .page--main {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+}
 
 /* latin */
 @font-face {
