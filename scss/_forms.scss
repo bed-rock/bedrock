@@ -7,8 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  min-height: $input-height;
-  margin-top: 0.75rem;
+  min-height: 2rem;
   margin-bottom: 1.5rem;
 
   &.inline {
@@ -20,7 +19,7 @@
 
   &.checkbox,
   &.radio {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     align-items: baseline;
 
     input[type='checkbox'],
@@ -94,19 +93,18 @@
 
 label {
   position: absolute;
+  top: 0;
   width: 100%;
-  line-height: $input-height;
+  padding: $input-padding;
   font-size: 1rem;
   color: $color-gray-light;
-  cursor: pointer;
   user-select: none;
   transition: $form-field-transition;
   @include text-overflow();
 
   .form_field.active & {
-    transform: translateY( - 0.85rem );
-    font-size: 0.85rem;
-    line-height: 1;
+    top: -16px;
+    font-size: 0.75rem;
   }
 
   .form_field.is-invalid & {
@@ -118,7 +116,12 @@ label {
   }
 }
 
-input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
 textarea,
 select {
   position: relative;
@@ -126,8 +129,7 @@ select {
   flex-grow: 1;
   max-width: 100%;
   height: $input-height;
-  line-height: $input-line-height;
-  padding: 0;
+  padding: $input-padding;
   margin: 0;
   appearance: none;
   font-family: inherit;

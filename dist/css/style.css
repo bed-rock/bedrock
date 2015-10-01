@@ -796,8 +796,7 @@ ul, ol, dl {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   width: 100%;
-  min-height: 2.5rem;
-  margin-top: 0.75rem;
+  min-height: 2rem;
   margin-bottom: 1.5rem;
 }
 .form_field.inline {
@@ -809,7 +808,7 @@ ul, ol, dl {
   margin-right: 1rem;
 }
 .form_field.checkbox, .form_field.radio {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   -webkit-align-items: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -882,11 +881,11 @@ ul, ol, dl {
 
 label {
   position: absolute;
+  top: 0;
   width: 100%;
-  line-height: 2.5rem;
+  padding: 16px 0 8px;
   font-size: 1rem;
   color: #999;
-  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -897,10 +896,8 @@ label {
   white-space: nowrap;
 }
 .form_field.active label {
-  -webkit-transform: translateY(-0.85rem);
-          transform: translateY(-0.85rem);
-  font-size: 0.85rem;
-  line-height: 1;
+  top: -16px;
+  font-size: 0.75rem;
 }
 .form_field.is-invalid label {
   color: #c0392b;
@@ -909,7 +906,12 @@ label {
   content: '* ';
 }
 
-input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
 textarea,
 select {
   position: relative;
@@ -918,9 +920,8 @@ select {
       -ms-flex-positive: 1;
           flex-grow: 1;
   max-width: 100%;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  padding: 0;
+  height: 3rem;
+  padding: 16px 0 8px;
   margin: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -934,25 +935,50 @@ select {
   box-shadow: 0 1px #cccccc;
   transition: all 0.2s;
 }
-input:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
 textarea:focus,
 select:focus {
   outline: none;
   box-shadow: 0 1px #334455;
 }
-input[disabled], input[readonly],
+input[type="text"][disabled], input[type="text"][readonly],
+input[type="password"][disabled],
+input[type="password"][readonly],
+input[type="email"][disabled],
+input[type="email"][readonly],
+input[type="url"][disabled],
+input[type="url"][readonly],
+input[type="search"][disabled],
+input[type="search"][readonly],
+input[type="tel"][disabled],
+input[type="tel"][readonly],
 textarea[disabled],
 textarea[readonly],
 select[disabled],
 select[readonly] {
   color: #999;
 }
-input[disabled],
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="email"][disabled],
+input[type="url"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
 textarea[disabled],
 select[disabled] {
   cursor: not-allowed;
 }
-.is-invalid input, .is-invalid
+.is-invalid input[type="text"], .is-invalid
+input[type="password"], .is-invalid
+input[type="email"], .is-invalid
+input[type="url"], .is-invalid
+input[type="search"], .is-invalid
+input[type="tel"], .is-invalid
 textarea, .is-invalid
 select {
   box-shadow: 0 1px #c0392b;
@@ -1168,8 +1194,8 @@ select option {
   overflow-y: auto;
 }
 .list li {
-  height: 2.5rem;
-  line-height: 2.5rem;
+  height: 3rem;
+  line-height: 3rem;
   padding: 0 1rem;
   color: #333;
   border-bottom: 1px solid #e6e6e6;
