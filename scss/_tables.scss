@@ -11,10 +11,6 @@
   background-color: #fff;
   @include elevation($elevation-2);
 
-  thead {
-    padding-bottom: 3px;
-  }
-
   tbody {
     tr {
       position: relative;

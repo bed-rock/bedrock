@@ -1043,9 +1043,6 @@ select option {
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0.5px 1px, rgba(0, 0, 0, 0.2) 0 2px 4px;
 }
-.table thead {
-  padding-bottom: 3px;
-}
 .table tbody tr {
   position: relative;
   height: 3rem;
