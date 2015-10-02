@@ -55,6 +55,15 @@ button {
 }
 
 
+// Table
+//
+// Reset th align
+
+th {
+  text-align: left;
+}
+
+
 // Figures
 //
 // We reset this here because previously Normalize had no `figure` margins. This

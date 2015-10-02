@@ -38,6 +38,10 @@ button {
   cursor: pointer;
 }
 
+th {
+  text-align: left;
+}
+
 figure {
   margin: 0;
 }
@@ -1082,7 +1086,6 @@ select option {
   padding-bottom: 8px;
   font-size: 1rem;
   color: #666;
-  text-align: left;
   box-sizing: border-box;
 }
 
