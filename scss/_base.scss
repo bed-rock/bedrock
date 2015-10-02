@@ -12,8 +12,9 @@ hr {
   height: 100%;
 }
 
-.page-main {
+.main {
   flex-grow: 1;
+  overflow-x: hidden;
   overflow-y: auto;
   padding: 2rem 1rem;
 
@@ -21,4 +22,10 @@ hr {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  @media (min-width: 1600px) {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+
 }
