@@ -7,7 +7,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  min-height: 2rem;
   margin-bottom: 1.5rem;
 
   &.inline {
@@ -49,6 +48,7 @@
       white-space: normal;
       width: auto;
       overflow: visible;
+      cursor: pointer;
 
       &:before {
         position: absolute;
