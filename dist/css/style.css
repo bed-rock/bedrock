@@ -1200,6 +1200,11 @@ select option {
   padding: 0;
   overflow-y: auto;
 }
+@media (min-width: 768px) {
+  .list {
+    max-height: 480px;
+  }
+}
 .list li {
   height: 3rem;
   line-height: 3rem;
