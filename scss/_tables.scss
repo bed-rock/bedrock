@@ -11,10 +11,6 @@
   background-color: #fff;
   @include elevation($elevation-2);
 
-  thead {
-    padding-bottom: 3px;
-  }
-
   tbody {
     tr {
       position: relative;
@@ -61,7 +57,6 @@
     padding-bottom: 8px;
     font-size: $table-header-font-size;
     color: $table-header-color;
-    text-align: left;
     box-sizing: border-box;
   }
 }

@@ -3,6 +3,10 @@
   padding: 0;
   overflow-y: auto;
 
+  @media(min-width: $screen-tablet) {
+    max-height: 480px;
+  }
+
   li {
     height: $list-items-height;
     line-height: $list-items-height;
