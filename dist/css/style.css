@@ -807,7 +807,6 @@ ul, ol, dl {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   width: 100%;
-  min-height: 2rem;
   margin-bottom: 1.5rem;
 }
 .form_field.inline {
@@ -850,6 +849,7 @@ ul, ol, dl {
   white-space: normal;
   width: auto;
   overflow: visible;
+  cursor: pointer;
 }
 .form_field.checkbox label:before, .form_field.radio label:before {
   position: absolute;
