@@ -6,11 +6,6 @@
 // Example:
 // <a href="#" data-toggle="tooltip" data-title="I'm a CSS Tooltip!">Hover me</a>
 
-// Variables
-//
-$tooltip-background: rgba(#222, 1);
-$tooltip-arrow-size: 6px;
-
 // Styles
 //
 [data-toggle="tooltip"] {
@@ -19,32 +14,31 @@ $tooltip-arrow-size: 6px;
 
   &:before,
   &:after {
+  }
+
+  &:after {
+    content: attr(data-title);
     visibility: hidden;
     opacity: 0;
     transform: scale(0);
     position: absolute;
     bottom: 100%;
+    left: 0%;
+    z-index: 9;
+    max-width: 320px;
+    margin-bottom: 8px;
+    padding: 8px;
+    line-height: normal;
+    background: #333;
+    color: rgba(#fff, 0.8);
+    font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 4px 8px;
+    transform-origin: bottom left;
     transition: all .2s ease-in-out;
   }
 
-  &:after {
-    content: attr(data-title);
-    z-index: 9;
-    left: 0%;
-    margin-bottom: $tooltip-arrow-size;
-    padding: 0.75em;
-    line-height: 1.25;
-    background: $tooltip-background;
-    color: rgba(#fff, 0.8);
-    font-size: 11px;
-    text-align: center;
-    border-radius: 1em 1em 1em 0;
-    box-shadow: rgba(0, 0, 0, 0.4) 0 4px 8px;
-    transform-origin: bottom left;
-  }
-
-  &:hover:before,
-  &:focus:before,
   &:hover:after,
   &:focus:after {
     visibility: visible;
