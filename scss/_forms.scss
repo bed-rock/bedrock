@@ -7,31 +7,27 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 1.5rem;
-
-  &.inline {
-    width: auto;
-    display: inline-flex;
-    vertical-align: top;
-    margin-right: 1rem;
-  }
+  margin-bottom: $input-margin-bottom;
 
   &.checkbox,
   &.radio {
-    margin-bottom: 1rem;
     align-items: baseline;
 
     input[type='checkbox'],
     input[type='radio'] {
       display: none;
 
-      &:checked ~ label:before {
-        height: $input-check-size / 2;
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-bottom-color: $input-check-checked-border-color;
-        border-left-color: $input-check-checked-border-color;
-        transform: rotate(-45deg) translateY(-1px);
+      &:checked ~ label {
+        color: $text-color;
+
+        &:before {
+          height: $input-check-size / 2;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          border-bottom-color: $input-check-checked-border-color;
+          border-left-color: $input-check-checked-border-color;
+          transform: rotate(-45deg) translateY(-1px);
+        }
       }
     }
 
@@ -116,6 +112,10 @@ label {
   }
 }
 
+.label_group {
+  color: $color-gray-light;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -146,12 +146,8 @@ select {
     box-shadow: 0 1px $input-border-color-focus;
   }
 
-  &[disabled],
-  &[readonly] {
-    color: $color-gray-light;
-  }
-
   &[disabled] {
+    color: $color-gray-light;
     cursor: $cursor-disabled;
   }
 
@@ -200,7 +196,7 @@ select {
   margin-top: 0.5rem;
   margin-bottom: 0;
   color: $color-error;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 
   .form_field.is-invalid & {
     display: block;
