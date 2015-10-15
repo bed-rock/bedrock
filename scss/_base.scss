@@ -1,10 +1,5 @@
-hr {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  border: 0;
-  border-top: 1px solid $border-color-light;
-}
-
+// Layout
+//
 .page {
   display: flex;
   flex-direction: column;
@@ -16,7 +11,7 @@ hr {
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 3rem;
 
   @media (min-width: $screen-lg-desktop) {
     padding-left: 2rem;
@@ -27,5 +22,25 @@ hr {
     padding-left: 4.5rem;
     padding-right: 4.5rem;
   }
+}
 
+.page--header {
+
+}
+
+.page--footer {
+  margin-top: 2rem;
+}
+
+.footer {
+
+}
+
+// Elements
+//
+hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 0;
+  border-top: 1px solid $border-color-light;
 }

@@ -114,6 +114,8 @@ label {
 
 .label_group {
   color: $color-gray-light;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 input[type="text"],
@@ -138,12 +140,12 @@ select {
   text-indent: $input-text-indent;
   background-color: transparent;
   border: none;
-  box-shadow: 0 1px $input-border-color;
+  border-bottom: 1px solid $input-border-color;
   transition: $form-field-transition;
 
   &:focus {
     outline: none;
-    box-shadow: 0 1px $input-border-color-focus;
+    border-bottom-color: $input-border-color-focus;
   }
 
   &[disabled] {
@@ -152,7 +154,7 @@ select {
   }
 
   .is-invalid & {
-    box-shadow: 0 1px $input-border-color-error;
+    border-bottom-color: $input-border-color-error;
   }
 }
 

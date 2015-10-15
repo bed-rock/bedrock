@@ -41,6 +41,20 @@
 }
 
 
+// Row Alignment
+//
+// Align your inner columns
+
+.middle {
+  align-items: center;
+}
+
+.bottom {
+  align-items: flex-end;
+}
+
+
+
 // Columns
 //
 // Common styles for small and large grid columns
@@ -82,3 +96,4 @@
 @media (min-width: $screen-lg-min) {
   @include make-grid(lg);
 }
+
