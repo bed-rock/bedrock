@@ -1252,67 +1252,6 @@ ul, ol, dl {
   width: 100%;
   margin-bottom: 1rem;
 }
-.form_field.checkbox, .form_field.radio {
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-}
-.form_field.checkbox input[type='checkbox'],
-.form_field.checkbox input[type='radio'], .form_field.radio input[type='checkbox'],
-.form_field.radio input[type='radio'] {
-  display: none;
-}
-.form_field.checkbox input[type='checkbox']:checked ~ label,
-.form_field.checkbox input[type='radio']:checked ~ label, .form_field.radio input[type='checkbox']:checked ~ label,
-.form_field.radio input[type='radio']:checked ~ label {
-  color: #333;
-}
-.form_field.checkbox input[type='checkbox']:checked ~ label:before,
-.form_field.checkbox input[type='radio']:checked ~ label:before, .form_field.radio input[type='checkbox']:checked ~ label:before,
-.form_field.radio input[type='radio']:checked ~ label:before {
-  height: 8px;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: #3CB371;
-  border-left-color: #3CB371;
-  -webkit-transform: rotate(-45deg) translateY(-1px);
-          transform: rotate(-45deg) translateY(-1px);
-}
-.form_field.checkbox input[type='radio']:checked ~ label:before, .form_field.radio input[type='radio']:checked ~ label:before {
-  border-radius: 0;
-}
-.form_field.checkbox label, .form_field.radio label {
-  position: static;
-  padding: 0 0 0 1.5rem;
-  line-height: 1.25;
-  white-space: normal;
-  width: auto;
-  overflow: visible;
-  cursor: pointer;
-}
-.form_field.checkbox label:before, .form_field.radio label:before {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  content: '';
-  display: block;
-  margin: 0;
-  margin-right: 0.5rem;
-  width: 16px;
-  height: 16px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #999;
-  cursor: pointer;
-  transition: all 0.2s;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transform-origin: 60% 30%;
-          transform-origin: 60% 30%;
-}
-.form_field.radio label:before {
-  border-radius: 50%;
-}
 .form_field .icon {
   margin-right: 1rem;
   -webkit-flex-grow: 0;
@@ -1327,6 +1266,63 @@ ul, ol, dl {
 }
 .form_field .icon ~ .form_field--error {
   margin-left: 40px;
+}
+
+.checkbox, .radio {
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.checkbox input, .radio input {
+  display: none;
+}
+.checkbox input:checked ~ label, .radio input:checked ~ label {
+  color: #333;
+}
+.checkbox input:checked ~ label:before, .radio input:checked ~ label:before {
+  height: 8px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #3CB371;
+  border-left-color: #3CB371;
+  -webkit-transform: rotate(-45deg) translate(-1px, 1px);
+          transform: rotate(-45deg) translate(-1px, 1px);
+}
+.checkbox label, .radio label {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: static;
+  padding: 0;
+  line-height: 1.25;
+  white-space: normal;
+  width: auto;
+  overflow: visible;
+  cursor: pointer;
+}
+.checkbox label:before, .radio label:before {
+  content: '';
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  display: block;
+  margin: 0.15em 0.5em 0 0;
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #999;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.radio input:checked ~ label:before {
+  border-radius: 0;
+}
+.radio label:before {
+  border-radius: 50%;
 }
 
 label {
