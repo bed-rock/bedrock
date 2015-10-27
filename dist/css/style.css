@@ -639,7 +639,7 @@ a {
   font-size: 0.875rem;
 }
 
-.font_bold, b, strong, dt, th {
+.font_bold, b, strong {
   font-weight: 500;
 }
 
@@ -1292,7 +1292,7 @@ ul, ol, dl {
   color: #333;
 }
 .checkbox input:checked ~ label:before, .radio input:checked ~ label:before {
-  height: 8px;
+  height: 0.5rem;
   border-top-color: transparent;
   border-right-color: transparent;
   border-bottom-color: #3CB371;
@@ -1319,8 +1319,8 @@ ul, ol, dl {
           flex-shrink: 0;
   display: block;
   margin: 0.15em 0.5em 0 0;
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   border-width: 2px;
   border-style: solid;
   border-color: #999;
@@ -1514,6 +1514,8 @@ select option {
   white-space: nowrap;
   font-size: 0.875rem;
   color: #999;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 .table td {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1559,6 +1561,7 @@ select option {
   border: 0;
 }
 .btn:hover:not([disabled]), .btn:focus:not(:active):not([disabled]) {
+  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px, rgba(0, 0, 0, 0.2) 0 4px 8px;
 }
 .btn:active:not([disabled]) {

@@ -46,6 +46,8 @@
     @include text-overflow();
     font-size: $table-header-font-size;
     color: $table-header-color;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 
   td {

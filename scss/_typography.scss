@@ -104,7 +104,7 @@ a {
   }
 }
 
-b, strong, dt, th {
+b, strong {
   @extend .font_bold;
 }
 
