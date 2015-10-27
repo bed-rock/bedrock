@@ -107,16 +107,16 @@ $button-transition: all 0.4s;
 
 // Tables
 //
-$table-font-size: 0.875rem;
-$table-header-font-size: 1rem;
-$table-header-color: $color-gray;
+$table-font-size: 1rem;
+$table-header-font-size: 0.875rem;
+$table-header-color: $color-gray-light;
 $table-row-height: 3rem;
-$table-column-padding: 18px;
-$table-cell-top: 12px;
 $table-accent-color: $color-white-2;
 $table-hover-color: $color-white-4;
 $table-selection-color: $color-white-4;
 $table-dividers: 1px solid rgba(0,0,0,.1);
+$table-margin-top: 1rem;
+$table-margin-bottom: 2rem;
 
 
 // Form controls

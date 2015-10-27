@@ -4,17 +4,17 @@
 .table {
   position: relative;
   width: 100%;
+  margin-top: $table-margin-top;
+  margin-bottom: $table-margin-bottom;
   border: $table-dividers;
-  border-collapse: collapse;
+  border-collapse: separate;
   white-space: nowrap;
   font-size: $table-font-size;
   background-color: #fff;
-  @include elevation($elevation-2);
 
   tbody {
     tr {
       position: relative;
-      height: $table-row-height;
       transition: $transition;
 
       &.is-selected {
@@ -28,36 +28,28 @@
   }
 
   td, th {
-    padding: 0 $table-column-padding 0 $table-column-padding;
+    position: relative;
+    height: $table-row-height;
+    padding: 0 1em;
+    vertical-align: middle;
+    box-sizing: border-box;
 
     &:first-of-type {
-      padding-left: 2rem;
+      padding-left: 2em;
     }
-
     &:last-of-type {
-      padding-right: 2rem;
+      padding-right: 2em;
     }
-  }
-
-  td {
-    position: relative;
-    vertical-align: top;
-    height: $table-row-height;
-    border-top: $table-dividers;
-    border-bottom: $table-dividers;
-    padding-top: $table-cell-top;
-    box-sizing: border-box;
   }
 
   th {
-    position: relative;
-    vertical-align: bottom;
     @include text-overflow();
-    height: $table-row-height;
-    padding-bottom: 8px;
     font-size: $table-header-font-size;
     color: $table-header-color;
-    box-sizing: border-box;
+  }
+
+  td {
+    border-bottom: $table-dividers;
   }
 }
 
