@@ -26,6 +26,7 @@
 
   &:hover:not([disabled]),
   &:focus:not(:active):not([disabled]) {
+    background-color: #fff;
     @include elevation($elevation-3);
   }
 

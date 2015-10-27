@@ -720,6 +720,18 @@ ul, ol, dl {
           align-items: flex-end;
 }
 
+.space-between {
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.space-around {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   padding-left: 1rem;
@@ -1465,16 +1477,16 @@ select option {
 .table {
   position: relative;
   width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-collapse: collapse;
+  border-collapse: separate;
   white-space: nowrap;
-  font-size: 0.875rem;
+  font-size: 1rem;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0.5px 1px, rgba(0, 0, 0, 0.2) 0 2px 4px;
 }
 .table tbody tr {
   position: relative;
-  height: 3rem;
   transition: all 0.2s;
 }
 .table tbody tr.is-selected {
@@ -1484,34 +1496,27 @@ select option {
   background-color: whitesmoke;
 }
 .table td, .table th {
-  padding: 0 18px 0 18px;
-}
-.table td:first-of-type, .table th:first-of-type {
-  padding-left: 2rem;
-}
-.table td:last-of-type, .table th:last-of-type {
-  padding-right: 2rem;
-}
-.table td {
   position: relative;
-  vertical-align: top;
   height: 3rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 12px;
+  padding: 0 1em;
+  vertical-align: middle;
   box-sizing: border-box;
 }
+.table td:first-of-type, .table th:first-of-type {
+  padding-left: 2em;
+}
+.table td:last-of-type, .table th:last-of-type {
+  padding-right: 2em;
+}
 .table th {
-  position: relative;
-  vertical-align: bottom;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  height: 3rem;
-  padding-bottom: 8px;
-  font-size: 1rem;
-  color: #666;
-  box-sizing: border-box;
+  font-size: 0.875rem;
+  color: #999;
+}
+.table td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
