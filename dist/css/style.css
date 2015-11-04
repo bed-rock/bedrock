@@ -1534,7 +1534,7 @@ select option {
           align-items: center;
   padding: 0 1em;
   height: 3rem;
-  line-height: 1.15em;
+  line-height: 1em;
   font-family: inherit;
   font-size: 1rem;
   color: #333;
@@ -1573,59 +1573,57 @@ select option {
   opacity: 0.7;
   cursor: not-allowed;
 }
-.btn.btn-block {
+.btn.btn__block {
   width: 100%;
+  text-align: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.btn.btn-default, .btn.btn-primary, .btn.btn-accent {
+.btn.btn__default {
   background-color: #fafafa;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
 }
-.btn.btn-default:hover:not([disabled]), .btn.btn-primary:hover:not([disabled]), .btn.btn-accent:hover:not([disabled]), .btn.btn-default:focus:not(:active):not([disabled]), .btn.btn-primary:focus:not(:active):not([disabled]), .btn.btn-accent:focus:not(:active):not([disabled]) {
+.btn.btn__default:hover:not([disabled]), .btn.btn__default:focus:not(:active):not([disabled]) {
   background-color: #e6e6e6;
 }
-.btn.btn-default:active:not([disabled]), .btn.btn-primary:active:not([disabled]), .btn.btn-accent:active:not([disabled]) {
+.btn.btn__default:active:not([disabled]) {
   background-color: #fafafa;
 }
-.btn.btn-primary {
+.btn.btn__primary {
   color: rgba(255, 255, 255, 0.95);
   background-color: #334455;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
 }
-.btn.btn-primary:hover:not([disabled]), .btn.btn-primary:focus:not(:active):not([disabled]) {
+.btn.btn__primary:hover:not([disabled]), .btn.btn__primary:focus:not(:active):not([disabled]) {
   background-color: #42586f;
 }
-.btn.btn-primary:active:not([disabled]) {
+.btn.btn__primary:active:not([disabled]) {
   background-color: #334455;
 }
-.btn.btn-accent {
+.btn.btn__accent {
   color: rgba(255, 255, 255, 0.95);
   background-color: #366261;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
 }
-.btn.btn-accent:hover:not([disabled]), .btn.btn-accent:focus:not(:active):not([disabled]) {
+.btn.btn__accent:hover:not([disabled]), .btn.btn__accent:focus:not(:active):not([disabled]) {
   background-color: #447c7b;
 }
-.btn.btn-accent:active:not([disabled]) {
+.btn.btn__accent:active:not([disabled]) {
   background-color: #366261;
 }
-.btn.btn-small {
+.btn.btn__small {
   height: 2rem;
-  line-height: 0.875em;
   font-size: 0.875rem;
   text-transform: uppercase;
 }
-.btn.btn-large {
+.btn.btn__large {
   height: 4rem;
-  line-height: 1.125em;
   font-size: 1.125rem;
 }
-.btn .icon {
-  margin-right: 0.75em;
-}
 
-.btn-icon .icon {
-  margin-right: 0;
+.btn--icon ~ .btn--label {
+  margin-left: 0.5em;
 }
 
 .list {
