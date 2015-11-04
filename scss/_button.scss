@@ -40,14 +40,14 @@
     cursor: not-allowed;
   }
 
-  &.btn-block {
+  &.btn__block {
     width: 100%;
+    text-align: center;
     justify-content: center;
   }
 
-  &.btn-default {
+  &.btn__default {
     background-color: $button-background;
-    // border: $button-border;
     @include elevation($elevation-1);
 
     &:hover:not([disabled]),
@@ -60,10 +60,10 @@
     }
   }
 
-  &.btn-primary {
+  &.btn__primary {
     color: $button-primary-color;
     background-color: $button-primary-background;
-    @extend .btn.btn-default;
+    @include elevation($elevation-1);
 
     &:hover:not([disabled]),
     &:focus:not(:active):not([disabled]) {
@@ -75,10 +75,10 @@
     }
   }
 
-  &.btn-accent {
+  &.btn__accent {
     color: $button-accent-color;
     background-color: $button-accent-background;
-    @extend .btn.btn-default;
+    @include elevation($elevation-1);
 
     &:hover:not([disabled]),
     &:focus:not(:active):not([disabled]) {
@@ -90,25 +90,19 @@
     }
   }
 
-  &.btn-small {
+  &.btn__small {
     height: $button-height-small;
-    line-height: $button-line-height-small;
     font-size: $button-font-size-small;
     text-transform: uppercase;
   }
 
-  &.btn-large {
-      height: $button-height-large;
-      line-height: $button-line-height-large;
-      font-size: $button-font-size-large;
-  }
-
-  .icon {
-    margin-right: 0.75em;
+  &.btn__large {
+    height: $button-height-large;
+    font-size: $button-font-size-large;
   }
 
 }
 
-.btn-icon .icon {
-  margin-right: 0;
+.btn--icon ~ .btn--label {
+  margin-left: 0.5em;
 }

@@ -90,9 +90,7 @@ $button-height: 3rem;
 $button-height-small: 2rem;
 $button-height-large: 4rem;
 
-$button-line-height: 1.15em;
-$button-line-height-small: 0.875em;
-$button-line-height-large: 1.125em;
+$button-line-height: 1em;
 
 $button-font-size: 1rem;
 $button-font-size-small: 0.875rem;
@@ -114,7 +112,8 @@ $table-row-height: 3rem;
 $table-accent-color: $color-white-2;
 $table-hover-color: $color-white-4;
 $table-selection-color: $color-white-4;
-$table-dividers: 1px solid rgba(0,0,0,.1);
+$table-border: 1px solid rgba(0, 0, 0, 0.15);
+$table-dividers: 1px solid rgba(0, 0, 0, 0.1);
 $table-margin-top: 1rem;
 $table-margin-bottom: 2rem;
 
