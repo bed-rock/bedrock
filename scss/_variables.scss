@@ -112,7 +112,8 @@ $table-row-height: 3rem;
 $table-accent-color: $color-white-2;
 $table-hover-color: $color-white-4;
 $table-selection-color: $color-white-4;
-$table-dividers: 1px solid rgba(0,0,0,.1);
+$table-border: 1px solid rgba(0, 0, 0, 0.15);
+$table-dividers: 1px solid rgba(0, 0, 0, 0.1);
 $table-margin-top: 1rem;
 $table-margin-bottom: 2rem;
 
