@@ -1626,6 +1626,10 @@ select option {
   margin-left: 0.5em;
 }
 
+.btn--label {
+  pointer-events: none;
+}
+
 .list {
   margin: 0;
   padding: 0;
