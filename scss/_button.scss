@@ -106,3 +106,7 @@
 .btn--icon ~ .btn--label {
   margin-left: 0.5em;
 }
+
+.btn--label {
+  pointer-events: none;
+}

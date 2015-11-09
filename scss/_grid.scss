@@ -40,18 +40,7 @@
   @include make-row;
 }
 
-
-// Row Alignment
-//
-// Align your inner columns
-
-.middle {
-  align-items: center;
-}
-
-.bottom {
-  align-items: flex-end;
-}
+// Horizontal alignment of columns
 
 .space-between {
   justify-content: space-between;
@@ -62,12 +51,28 @@
 }
 
 
-
 // Columns
 //
 // Common styles for small and large grid columns
 
 @include make-grid-columns;
+
+.col {
+  display: flex;
+  flex-grow: 1;
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+}
+
+// Vertical alignment of columns
+
+.valign__center {
+  align-self: center;
+}
+
+.valign__bottom {
+  align-self: flex-end;
+}
 
 
 // Extra small grid
