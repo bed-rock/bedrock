@@ -1,13 +1,14 @@
 .btn {
   display: inline-flex;
-  align-items: center;
   padding: 0 $button-padding-horizontal;
   height: $button-height;
   line-height: $button-line-height;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   font-family: inherit;
   font-size: $button-font-size;
   color: $button-color;
-  text-align: left;
   border: none;
   text-decoration: none;
   outline: none;
@@ -16,7 +17,7 @@
   background: transparent;
   border-radius: $button-border-radius;
   transition: $button-transition;
-  transform: scale(1);
+  // transform: scale(1);
   user-select: none;
   cursor: pointer;
 
@@ -24,79 +25,79 @@
     border: 0;
   }
 
-  &:hover:not([disabled]),
-  &:focus:not(:active):not([disabled]) {
-    background-color: #fff;
-    @include elevation($elevation-3);
+  &:hover,
+  &:focus {
+    background-color: rgba(#000,0.1);
+    // @include elevation($elevation-3);
   }
 
-  &:active:not([disabled]) {
-    transform: scale(0.95);
-    @include elevation($elevation-1);
+  &:active {
+    background-color: rgba(#000,0.2);
   }
 
   &[disabled] {
-    opacity: 0.7;
-    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
   }
 
-  &.btn__block {
+  &__block {
     width: 100%;
-    text-align: center;
-    justify-content: center;
   }
 
-  &.btn__default {
+  &__default {
     background-color: $button-background;
-    @include elevation($elevation-1);
+    @include elevation($elevation-3);
 
-    &:hover:not([disabled]),
-    &:focus:not(:active):not([disabled]) {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: $button-background-hover;
+      @include elevation($elevation-3);
     }
 
-    &:active:not([disabled]) {
-      background-color: $button-background;
+    &:active {
+      @include elevation($elevation-1);
     }
   }
 
-  &.btn__primary {
+  &__primary {
+    @extend .btn__default;
     color: $button-primary-color;
     background-color: $button-primary-background;
-    @include elevation($elevation-1);
 
-    &:hover:not([disabled]),
-    &:focus:not(:active):not([disabled]) {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: $button-primary-background-hover;
     }
-
-    &:active:not([disabled]) {
-      background-color: $button-primary-background;
-    }
   }
 
-  &.btn__accent {
+  &__accent {
+    @extend .btn__default;
     color: $button-accent-color;
     background-color: $button-accent-background;
-    @include elevation($elevation-1);
 
-    &:hover:not([disabled]),
-    &:focus:not(:active):not([disabled]) {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: $button-accent-background-hover;
-    }
-
-    &:active:not([disabled]) {
-      background-color: $button-accent-background;
     }
   }
 
-  &.btn__small {
+  &__icon {
+    padding: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+  }
+
+  &__small {
     height: $button-height-small;
     font-size: $button-font-size-small;
     text-transform: uppercase;
   }
 
-  &.btn__large {
+  &__large {
     height: $button-height-large;
     font-size: $button-font-size-large;
   }

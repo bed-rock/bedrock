@@ -1546,16 +1546,19 @@ select option {
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 0 1em;
   height: 3rem;
   line-height: 1em;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: inherit;
   font-size: 1rem;
-  color: #333;
-  text-align: left;
+  color: #666;
   border: none;
   text-decoration: none;
   outline: none;
@@ -1564,10 +1567,8 @@ select option {
           appearance: none;
   vertical-align: middle;
   background: transparent;
-  border-radius: 3px;
-  transition: all 0.4s;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  border-radius: 2px;
+  transition: all 0.2s ease-out;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1577,64 +1578,56 @@ select option {
 .btn::-moz-focus-inner {
   border: 0;
 }
-.btn:hover:not([disabled]), .btn:focus:not(:active):not([disabled]) {
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px, rgba(0, 0, 0, 0.2) 0 4px 8px;
+.btn:hover, .btn:focus {
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.btn:active:not([disabled]) {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
+.btn:active {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .btn[disabled] {
-  opacity: 0.7;
-  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
 }
-.btn.btn__block {
+.btn__block {
   width: 100%;
-  text-align: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
-.btn.btn__default {
+.btn__default, .btn__primary, .btn__accent {
   background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px, rgba(0, 0, 0, 0.2) 0 4px 8px;
+}
+.btn__default:hover, .btn__primary:hover, .btn__accent:hover, .btn__default:focus, .btn__primary:focus, .btn__accent:focus, .btn__default:active, .btn__primary:active, .btn__accent:active {
+  background-color: #e6e6e6;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px, rgba(0, 0, 0, 0.2) 0 4px 8px;
+}
+.btn__default:active, .btn__primary:active, .btn__accent:active {
   box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
 }
-.btn.btn__default:hover:not([disabled]), .btn.btn__default:focus:not(:active):not([disabled]) {
-  background-color: #e6e6e6;
-}
-.btn.btn__default:active:not([disabled]) {
-  background-color: #fafafa;
-}
-.btn.btn__primary {
+.btn__primary {
   color: rgba(255, 255, 255, 0.95);
   background-color: #334455;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
 }
-.btn.btn__primary:hover:not([disabled]), .btn.btn__primary:focus:not(:active):not([disabled]) {
+.btn__primary:hover, .btn__primary:focus, .btn__primary:active {
   background-color: #42586f;
 }
-.btn.btn__primary:active:not([disabled]) {
-  background-color: #334455;
-}
-.btn.btn__accent {
+.btn__accent {
   color: rgba(255, 255, 255, 0.95);
   background-color: #366261;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0.25px 0.5px, rgba(0, 0, 0, 0.2) 0 1px 2px;
 }
-.btn.btn__accent:hover:not([disabled]), .btn.btn__accent:focus:not(:active):not([disabled]) {
+.btn__accent:hover, .btn__accent:focus, .btn__accent:active {
   background-color: #447c7b;
 }
-.btn.btn__accent:active:not([disabled]) {
-  background-color: #366261;
+.btn__icon {
+  padding: 0;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
 }
-.btn.btn__small {
+.btn__small {
   height: 2rem;
   font-size: 0.875rem;
   text-transform: uppercase;
 }
-.btn.btn__large {
+.btn__large {
   height: 4rem;
   font-size: 1.125rem;
 }
