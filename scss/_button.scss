@@ -103,8 +103,12 @@
 
 }
 
-.btn--icon ~ .btn--label {
-  margin-left: 0.5em;
+.btn--icon {
+  pointer-events: none;
+
+  & ~ .btn--label {
+    margin-left: 0.5em;
+  }
 }
 
 .btn--label {
