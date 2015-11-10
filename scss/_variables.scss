@@ -68,7 +68,7 @@ $button-font-weight: 400;
 
 $button-border: 1px solid rgba(0, 0, 0, 0.0875);
 
-$button-color: #333;
+$button-color: #666;
 $button-background: $color-white-2;
 $button-background-hover: darken($button-background,8%);
 $button-background-active: darken($button-background-hover,8%);
@@ -98,9 +98,9 @@ $button-font-size-large: 1.125rem;
 
 $button-padding-horizontal: 1em;
 $button-margin: 1rem;
-$button-border-radius: 3px;
+$button-border-radius: 2px;
 
-$button-transition: all 0.4s;
+$button-transition: all 0.2s ease-out;
 
 
 // Tables
