@@ -14,7 +14,8 @@
     padding-left:  ceil(($grid-gutter-width / 2));
     padding-right: floor(($grid-gutter-width / 2));
 
-    flex-basis: 100%;
+    // flex-basis: 100%; // Not function in IE10 - changed to width
+    width: 100%;
   }
 }
 
@@ -33,7 +34,8 @@
 @mixin calc-grid-column($index, $class, $type) {
   @if ($type == flex-basis) and ($index > 0) {
     .col-#{$class}-#{$index} {
-      flex-basis: percentage(($index / $grid-columns));
+      // flex-basis: percentage(($index / $grid-columns)); // Not function in IE10 - changed to width
+      width: percentage(($index / $grid-columns))
     }
   }
   // @if ($type == push) and ($index > 0) {
