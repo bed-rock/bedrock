@@ -1546,6 +1546,7 @@ select option {
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  display: -moz-box;
   padding: 0 1em;
   height: 3rem;
   line-height: 1em;
@@ -1577,6 +1578,9 @@ select option {
 }
 .btn::-moz-focus-inner {
   border: 0;
+}
+.btn * {
+  pointer-events: none;
 }
 .btn:hover, .btn:focus {
   background-color: rgba(0, 0, 0, 0.1);
@@ -1632,15 +1636,8 @@ select option {
   font-size: 1.125rem;
 }
 
-.btn--icon {
-  pointer-events: none;
-}
 .btn--icon ~ .btn--label {
   margin-left: 0.5em;
-}
-
-.btn--label {
-  pointer-events: none;
 }
 
 .list {

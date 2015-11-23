@@ -1,5 +1,6 @@
 .btn {
   display: inline-flex;
+  display: -moz-box; // Hack to firefox - display inline-flex not showing icon and text inline
   padding: 0 $button-padding-horizontal;
   height: $button-height;
   line-height: $button-line-height;
@@ -23,6 +24,10 @@
 
   &::-moz-focus-inner {
     border: 0;
+  }
+
+  & * {
+    pointer-events: none;
   }
 
   &:hover,
@@ -105,13 +110,7 @@
 }
 
 .btn--icon {
-  pointer-events: none;
-
   & ~ .btn--label {
     margin-left: 0.5em;
   }
-}
-
-.btn--label {
-  pointer-events: none;
 }
