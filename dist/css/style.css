@@ -1598,7 +1598,8 @@ select option {
   z-index: 99;
   max-width: 280px;
   min-width: 280px;
-  margin: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   padding: 8px;
   overflow: hidden;
   font-size: 12px;
