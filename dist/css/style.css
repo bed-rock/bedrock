@@ -1593,7 +1593,7 @@ select option {
   z-index: 99;
   max-width: 280px;
   min-width: 280px;
-  margin-top: 8px;
+  margin: 8px;
   padding: 8px;
   overflow: hidden;
   font-size: 12px;
@@ -1606,6 +1606,10 @@ select option {
   transition-property: opacity, visibility;
   transition-duration: .3s;
   transition-timing-function: ease-out;
+}
+[data-toggle="tooltip"][data-position="top"]:after {
+  top: auto;
+  bottom: 100%;
 }
 [data-toggle="tooltip"][data-position="right"]:after {
   left: auto;
