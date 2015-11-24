@@ -21,7 +21,7 @@
     z-index: 99;
     max-width: 280px;
     min-width: 280px; // Remover após criado o componente
-    margin-top: 8px;
+    margin: 8px;
     padding: 8px;
     overflow: hidden;
 
@@ -36,6 +36,13 @@
     transition-property: opacity, visibility;
     transition-duration: .3s;
     transition-timing-function: ease-out;
+  }
+
+  &[data-position="top"] {
+    &:after {
+      top: auto;
+      bottom: 100%;
+    }
   }
 
   &[data-position="right"] {

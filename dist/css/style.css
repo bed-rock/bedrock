@@ -456,6 +456,18 @@ body {
   outline: none;
 }
 
+[disabled] {
+  pointer-events: none;
+}
+
+[readonly] {
+  cursor: default;
+}
+
+abbr {
+  cursor: help;
+}
+
 input[type="button"],
 button {
   font-family: inherit;
@@ -473,10 +485,6 @@ figure {
 
 a img {
   border: none;
-}
-
-abbr {
-  cursor: help;
 }
 
 .page {
@@ -1414,18 +1422,15 @@ select option {
 .table tbody tr:hover {
   background-color: whitesmoke;
 }
+.table tbody tr:last-of-type td {
+  border-bottom-width: 0;
+}
 .table td, .table th {
   position: relative;
   height: 3rem;
   padding: 0 1em;
   vertical-align: middle;
   box-sizing: border-box;
-}
-.table td:first-of-type, .table th:first-of-type {
-  padding-left: 2em;
-}
-.table td:last-of-type, .table th:last-of-type {
-  padding-right: 2em;
 }
 .table th {
   overflow: hidden;
@@ -1593,7 +1598,7 @@ select option {
   z-index: 99;
   max-width: 280px;
   min-width: 280px;
-  margin-top: 8px;
+  margin: 8px;
   padding: 8px;
   overflow: hidden;
   font-size: 12px;
@@ -1606,6 +1611,10 @@ select option {
   transition-property: opacity, visibility;
   transition-duration: .3s;
   transition-timing-function: ease-out;
+}
+[data-toggle="tooltip"][data-position="top"]:after {
+  top: auto;
+  bottom: 100%;
 }
 [data-toggle="tooltip"][data-position="right"]:after {
   left: auto;
@@ -1642,6 +1651,10 @@ select option {
 
 .img_circle {
   border-radius: 50%;
+}
+
+.white_space__normal {
+  white-space: normal;
 }
 
 .sr_only {
