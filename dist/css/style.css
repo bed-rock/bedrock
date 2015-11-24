@@ -456,6 +456,18 @@ body {
   outline: none;
 }
 
+[disabled] {
+  pointer-events: none;
+}
+
+[readonly] {
+  cursor: default;
+}
+
+abbr {
+  cursor: help;
+}
+
 input[type="button"],
 button {
   font-family: inherit;
@@ -473,10 +485,6 @@ figure {
 
 a img {
   border: none;
-}
-
-abbr {
-  cursor: help;
 }
 
 .page {
@@ -1414,18 +1422,15 @@ select option {
 .table tbody tr:hover {
   background-color: whitesmoke;
 }
+.table tbody tr:last-of-type td {
+  border-bottom-width: 0;
+}
 .table td, .table th {
   position: relative;
   height: 3rem;
   padding: 0 1em;
   vertical-align: middle;
   box-sizing: border-box;
-}
-.table td:first-of-type, .table th:first-of-type {
-  padding-left: 2em;
-}
-.table td:last-of-type, .table th:last-of-type {
-  padding-right: 2em;
 }
 .table th {
   overflow: hidden;
@@ -1646,6 +1651,10 @@ select option {
 
 .img_circle {
   border-radius: 50%;
+}
+
+.white_space__normal {
+  white-space: normal;
 }
 
 .sr_only {

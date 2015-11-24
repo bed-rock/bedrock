@@ -24,6 +24,11 @@
       &:hover {
         background-color: $table-hover-color;
       }
+
+      &:last-of-type td {
+        border-bottom-width: 0;
+      }
+
     }
   }
 
@@ -33,13 +38,6 @@
     padding: 0 1em;
     vertical-align: middle;
     box-sizing: border-box;
-
-    &:first-of-type {
-      padding-left: 2em;
-    }
-    &:last-of-type {
-      padding-right: 2em;
-    }
   }
 
   th {
