@@ -18,7 +18,6 @@
   background: transparent;
   border-radius: $button-border-radius;
   transition: $button-transition;
-  // transform: scale(1);
   user-select: none;
   cursor: pointer;
 
@@ -33,7 +32,6 @@
   &:hover,
   &:focus {
     background-color: rgba(#000,0.1);
-    // @include elevation($elevation-3);
   }
 
   &:active {
@@ -57,7 +55,6 @@
     &:focus,
     &:active {
       background-color: $button-background-hover;
-      @include elevation($elevation-3);
     }
 
     &:active {
