@@ -59,7 +59,8 @@
 
 .col {
   display: flex;
-  flex-grow: 1;
+  flex-grow: 0;
+  align-items: flex-start;
   padding-left: $grid-gutter-width / 2;
   padding-right: $grid-gutter-width / 2;
 }
