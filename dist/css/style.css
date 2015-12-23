@@ -1238,7 +1238,6 @@ ul, ol, dl {
   width: auto;
   overflow: visible;
   cursor: pointer;
-  pointer-events: auto;
 }
 .checkbox label:before, .radio label:before {
   content: '';
@@ -1268,7 +1267,6 @@ ul, ol, dl {
 label {
   position: absolute;
   top: 0;
-  z-index: 9;
   width: 100%;
   padding: 16px 0 8px;
   font-size: 1rem;
@@ -1277,7 +1275,6 @@ label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  pointer-events: none;
   transition: all 0.2s;
   overflow: hidden;
   text-overflow: ellipsis;
