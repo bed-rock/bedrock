@@ -25,15 +25,23 @@
 }
 
 .page--header {
-
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
 }
+
+  .page--header--icon {
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+
+  .page--header--title {
+    font-size: $font-size-h1;
+    margin: 0;
+  }
 
 .page--footer {
   margin-top: 2rem;
-}
-
-.footer {
-
 }
 
 // Elements
