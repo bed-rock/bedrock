@@ -9,8 +9,7 @@
     "scss/general.scss"
   ],
   "dependencies": {
-    "normalize.css": "~3.0.3",
-    "polymer": "Polymer/polymer#1.2.3"
+    "normalize.css": "~3.0.3"    
   },
    "license": "MIT",
   "ignore": [
