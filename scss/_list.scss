@@ -19,8 +19,12 @@
     cursor: pointer;
     transition: $transition;
 
-    &:hover,
-    &:focus,
+    &:hover {
+        border: 1px solid $list-items-hover-bg-color;
+        color: $list-items-hover-bg-color;
+    }
+
+
     &.is_selected {
       background: $list-items-hover-bg-color;
       color: $list-items-hover-color;
