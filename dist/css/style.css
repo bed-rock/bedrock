@@ -1136,8 +1136,9 @@ select option {
   transition: all 0.2s;
 }
 .list li:hover {
+  background: list-items-hover-bg-color;
+  color: #fff;
   border: 1px solid #789;
-  color: #789;
 }
 .list li.is_selected {
   background: #789;
