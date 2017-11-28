@@ -1129,7 +1129,6 @@ select option {
   padding: 0 1rem;
   color: #333;
   border-bottom: 1px solid #e6e6e6;
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
