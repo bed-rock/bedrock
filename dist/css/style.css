@@ -1149,9 +1149,6 @@ select option {
   text-decoration: none;
   outline: none;
 }
-.list li a:hover, .list li a:focus {
-  color: #fff;
-}
 
 [data-toggle="tooltip"] {
   position: relative;
