@@ -1135,7 +1135,9 @@ select option {
   transition: all 0.2s;
 }
 .list li:hover {
-  background: list-items-hover-bg-color;
+  background: #789;
+  color: #fff;
+  border: 1px solid #789;
 }
 .list li.is_selected {
   background: #789;
@@ -1148,6 +1150,9 @@ select option {
   display: block;
   text-decoration: none;
   outline: none;
+}
+.list li a:hover, .list li a:focus {
+  color: #fff;
 }
 
 [data-toggle="tooltip"] {

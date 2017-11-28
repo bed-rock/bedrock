@@ -20,9 +20,9 @@
     transition: $transition;
 
     &:hover {
-        background: list-items-hover-bg-color;
-        // color: $list-items-hover-color;
-        // border: 1px solid $list-items-hover-bg-color;        
+        background: $list-items-hover-bg-color;
+        color: $list-items-hover-color;
+        border: 1px solid $list-items-hover-bg-color;        
     }
 
 
@@ -40,10 +40,10 @@
       text-decoration: none;
       outline: none;
 
-      // &:hover,
-      // &:focus {
-      //   color: $list-items-hover-color;
-      // }
+      &:hover,
+      &:focus {
+        color: $list-items-hover-color;
+      }
     }
 
   }
